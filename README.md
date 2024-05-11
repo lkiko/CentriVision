@@ -34,13 +34,13 @@ CentriVision 旨在提供一个简单而强大的工具，用于分析和可视�
 
 `cat /home/charles/anaconda3/lib/python3.11/site-packages/CentriVision/conf.ini`
 
-[ini]
+[ini] 
 
-trf_path = /usr/bin/trf
+trf_path = /usr/bin/trf 
 
-mafft_path = /usr/bin/mafft
+mafft_path = /usr/bin/mafft 
 
-muscle_path = /usr/bin/muscle
+muscle_path = /usr/bin/muscle 
 
 
 使用vim或其它编辑器修改对应依赖软件位置TRF\Mafft\Muscle 并保存
@@ -89,21 +89,33 @@ options:
 配置文件：
 
 [Dotplot] 
+
 genome_file = genome file 
+
 windows = 4000 
+
 minlength = 8 
+
 poly = False 
+
 cpu = 16 
+
 outfile = out dotplot 
+
 
 
 参数解释：
 
 genome_file 着丝粒fasta文件 
+
 windows 窗口宽度 
+
 minlength 最短重复片段 
+
 poly 单碱基重复去除 
+
 cpu 线程数 
+
 outfile 着丝粒特征文件 
 
 
@@ -131,23 +143,36 @@ outfile 着丝粒特征文件
 将参数重定向到配置文件total.conf
 
 覆盖式命令：  `CentriVision -hmap ? > total.conf` 
+
 追加式命令：  `CentriVision -hmap ? >> total.conf` 
 
 配置文件：
 
 [Heatmap] 
+
 centromere_file = genome file 
+
 align_software = muscle or mafft 
+
 color_mode = Discrete or Gradient 
+
 split = 1000 
+
 out_path = out path 
 
+
 参数解释： 
+
 centromere_file 着丝粒fasta文件 
+
 align_software 多序列比对软件支持 muscle or mafft 
+
 color_mode 颜色模式支持 Discrete or Gradient 
+
 split 每着丝粒拆分为1000等份 
+
 out_path 输出路径 
+
 
 功能执行：
 
