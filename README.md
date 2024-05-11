@@ -77,6 +77,7 @@ options:
 ### 着丝粒点阵图 -d
 
 查看对应参数
+
 命令： `CentriVision -d ?`
 
 将参数重定向到配置文件total.conf
@@ -87,37 +88,36 @@ options:
 
 配置文件：
 
-[Dotplot]
-genome_file = genome file
-
-windows = 4000
-
-minlength = 8
-
-poly = False
-
-cpu = 16
-
-outfile = out dotplot
+[Dotplot] 
+genome_file = genome file 
+windows = 4000 
+minlength = 8 
+poly = False 
+cpu = 16 
+outfile = out dotplot 
 
 
 参数解释：
-genome_file 着丝粒fasta文件
 
-windows 窗口宽度
-
-minlength 最短重复片段
-
-poly 单碱基重复去除
-
-cpu 线程数
-
-outfile 着丝粒特征文件
+genome_file 着丝粒fasta文件 
+windows 窗口宽度 
+minlength 最短重复片段 
+poly 单碱基重复去除 
+cpu 线程数 
+outfile 着丝粒特征文件 
 
 
 功能执行：
 
 命令： `CentriVision -d total.conf`
+
+结果：
+点阵图：展示序列重复规律的点图
+![chr02_1_s98-dotplot](https://github.com/lkiko/CentriVision/assets/57740432/47a3700d-c49d-4000-8f67-3ee4c7c1ffaa)
+
+查找重复单元的相位纠正图
+![chr02_1_s98](https://github.com/lkiko/CentriVision/assets/57740432/0de54b96-94bd-4c05-a60a-b60e64dd8020)
+
 
 ***
 
@@ -125,43 +125,38 @@ outfile 着丝粒特征文件
 
 
 查看对应参数
+
 命令： `CentriVision -hmap ?`
 
 将参数重定向到配置文件total.conf
 
-覆盖式命令：  `CentriVision -hmap ? > total.conf`
-
-追加式命令：  `CentriVision -hmap ? >> total.conf`
-
+覆盖式命令：  `CentriVision -hmap ? > total.conf` 
+追加式命令：  `CentriVision -hmap ? >> total.conf` 
 
 配置文件：
 
-[Heatmap]
+[Heatmap] 
+centromere_file = genome file 
+align_software = muscle or mafft 
+color_mode = Discrete or Gradient 
+split = 1000 
+out_path = out path 
 
-centromere_file = genome file
-
-align_software = muscle or mafft
-
-color_mode = Discrete or Gradient
-
-split = 1000
-
-out_path = out path
-
-参数解释：
-centromere_file 着丝粒fasta文件
-
-align_software 多序列比对软件支持 muscle or mafft
-
-color_mode 颜色模式支持 Discrete or Gradient
-
-split 每着丝粒拆分为1000等份
-
-out_path 输出路径
-
+参数解释： 
+centromere_file 着丝粒fasta文件 
+align_software 多序列比对软件支持 muscle or mafft 
+color_mode 颜色模式支持 Discrete or Gradient 
+split 每着丝粒拆分为1000等份 
+out_path 输出路径 
 
 功能执行：
 
 命令： `CentriVision -hmap total.conf`
+
+结果
+
+重复序列相似性热图：
+![s02_1](https://github.com/lkiko/CentriVision/assets/57740432/d0b95ae5-d83f-4997-9410-2768ddc296bf)
+
 
 ***
