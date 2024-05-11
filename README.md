@@ -82,24 +82,36 @@ options:
 将参数重定向到配置文件total.conf
 
 覆盖式命令：  `CentriVision -d ? > total.conf`
+
 追加式命令：  `CentriVision -d ? >> total.conf`
 
 配置文件：
 
 [Dotplot]
 genome_file = genome file
+
 windows = 4000
+
 minlength = 8
+
 poly = False
+
 cpu = 16
+
 outfile = out dotplot
+
 
 参数解释：
 genome_file 着丝粒fasta文件
+
 windows 窗口宽度
+
 minlength 最短重复片段
+
 poly 单碱基重复去除
+
 cpu 线程数
+
 outfile 着丝粒特征文件
 
 
@@ -118,7 +130,9 @@ outfile 着丝粒特征文件
 将参数重定向到配置文件total.conf
 
 覆盖式命令：  `CentriVision -hmap ? > total.conf`
+
 追加式命令：  `CentriVision -hmap ? >> total.conf`
+
 
 配置文件：
 
@@ -136,10 +150,15 @@ out_path = out path
 
 参数解释：
 centromere_file 着丝粒fasta文件
+
 align_software 多序列比对软件支持 muscle or mafft
+
 color_mode 颜色模式支持 Discrete or Gradient
+
 split 每着丝粒拆分为1000等份
+
 out_path 输出路径
+
 
 功能执行：
 
