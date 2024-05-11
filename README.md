@@ -23,7 +23,7 @@ CentriVision 旨在提供一个简单而强大的工具，用于分析和可视�
 ---
 ## 配置：
 
-**以下以ubuntu用户名为charles conda3 python3.11环境为例**
+**以下以 ubuntu操作系统 用户名为charles 的conda3 python3.11环境为例**
 
 
 默认安装路径：
