@@ -1,5 +1,7 @@
 # CentriVision
 
+At present there is no detailed manual for this application, you will simply have to play around and see what happens.
+
 CentriVision 是一个用于研究基因组着丝粒结构的软件工具。
 ---
 
