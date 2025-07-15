@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15910908.svg)](https://doi.org/10.5281/zenodo.15910908)
+
 # CentriVision
 
 ## At present there is no detailed manual for this application, you will simply have to play around and see what happens.
