@@ -34,7 +34,7 @@ CentriVision 旨在提供一个简单而强大的工具，用于分析和可视�
 ---
 ## 配置：
 
-**以下以 ubuntu操作系统 用户名为charles 的conda3 python3.11环境为例**
+**以下以 ubuntu操作系统 用户名为charles 的miniconda3 python3.13环境为例**
 
 <p align="center">
   <img src="https://github.com/lkiko/CentriVision/blob/main/video/configuration.gif?raw=true" width="100%">
@@ -42,16 +42,16 @@ CentriVision 旨在提供一个简单而强大的工具，用于分析和可视�
 
 默认安装路径：
 
-`/home/charles/anaconda3/lib/python3.11/site-packages/CentriVision/`
+`/home/charles/miniconda3/lib/python3.13/site-packages/CentriVision/`
 
 查看依赖文件：
 
-`cat /home/charles/anaconda3/lib/python3.11/site-packages/CentriVision/conf.ini`
+`cat /home/charles/miniconda3/lib/python3.13/site-packages/CentriVision/conf.ini`
 
 ```
 [ini]
 # mpirun_path = mpirun 非必需
-mpirun_path = /home/charles/anaconda3/bin/mpirun
+mpirun_path = /home/charles/miniconda3/bin/mpirun
 trf_path = /usr/bin/trf
 # MAFFT v7.490 指定版本
 mafft_path = /usr/bin/mafft
