@@ -17,6 +17,9 @@ CentriVision 旨在提供一个简单而强大的工具，用于分析和可视�
 ---
 
 ## 安装
+<p align="center">
+  <img src="https://github.com/lkiko/CentriVision/blob/main/video/install.gif?raw=true" width="100%">
+</p>
 
 你可以使用 pip 来安装 CentriVision：
 
