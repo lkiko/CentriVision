@@ -45,25 +45,24 @@ CentriVision 旨在提供一个简单而强大的工具，用于分析和可视�
 
 `cat /home/charles/anaconda3/lib/python3.11/site-packages/CentriVision/conf.ini`
 
-```[ini]
+```
+[ini]
 # mpirun_path = mpirun 非必需
 mpirun_path = /home/charles/anaconda3/bin/mpirun
 trf_path = /usr/bin/trf
-# MAFFT v7.490
+# MAFFT v7.490 指定版本
 mafft_path = /usr/bin/mafft
 # MUSCLE v3.8.1551
 muscle_path = /usr/bin/muscle
-# CLUSTAL 2.1
+# CLUSTAL 2.1  指定版本
 clustalw_path = /usr/bin/clustalw
-# 1.2.4
+# 1.2.4  指定版本
 clustalo_path = /usr/bin/clustalo
 blast_path = /usr/bin/
-# Bowtie 2 version 2.4.4
+# Bowtie 2 version 2.4.4  指定版本
 bowtie2_path = /usr/bin/
 
 ```
-
-
 
 使用vim或其它编辑器修改对应依赖软件位置TRF\Mafft\Muscle 并保存
 
@@ -72,55 +71,34 @@ bowtie2_path = /usr/bin/
 ## 使用
 命令： `CentriVision -h`
 
+```
 usage: CentriVision [options]
-
 runing CentriVision
-
 options:
-
   -h, --help            show this help message and exit
-  
   -v, --version         show program's version number and exit
-  
   -ps PALINDROMIC       Palindromic sequence 查询基因组中的回文序列
-  
   -trf TRF              run TRF(Tandem Repeat Finder) 通过TRF查找串联重复序列；
-  
   -cf CENTRIFINDER      Centrifinder 着丝粒预测；
-  
   -md DOTPLOT           mini Dotplot 重复序列点图；
-  
   -hm HEATMAP           Heatmap 区域相似度热图；
-  
   -m MONOMER            Monomer scanning 重复单体扫描；
-  
   -s SEQSIGIL           SeqSigil scanning 重复单体logo；
-  
   -ic IC_SIGNIFICANCE   Ic Significance 单体保守性IC检验；
-  
   -sa SATAGE            SatAge Monomer 重复时间推断（拟分子钟）；
-  
   -gc GET_CENTRI        Get_centri 提取基因组的指定区域；
-  
   -gf GET_CENTGFF       Get_centgff 提取基因组的指定区域gff,index修改为相对着丝粒；
-  
   -gr GET_REPEAT        Get_repeat 根据gff3提取基因组的重复序列；
-  
   -c COUNT_FILE         Count_file 统计dotplot文件；
-  
   -r HOR                HOR HOR搜索；
-  
   -ed EDISTDOT          EdistDot EdistDot 点阵图；
-  
   -e EDISTALN           EdistAln EdistAln 快速比对；
-  
   -cd COMMUNITY_DETECTION
                         Community_detection 重复序列社区发现；
-                        
   -cm REPEAT_COMMUNITY_MAP
                         Repeat_community_map 重复序列社区映射；
 
-
+```
 ***
 
 ### 着丝粒点阵图 -d
