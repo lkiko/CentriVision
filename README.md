@@ -29,7 +29,7 @@ CentriVision 旨在提供一个简单而强大的工具，用于分析和可视�
 
 `pip install CentriVision-x.x.x-py3-none-any.whl`
 
-软件依赖TRF,Mafft,Muscle
+软件依赖TRF,Mafft,Muscle,clustalw
 
 ---
 ## 配置：
@@ -45,13 +45,24 @@ CentriVision 旨在提供一个简单而强大的工具，用于分析和可视�
 
 `cat /home/charles/anaconda3/lib/python3.11/site-packages/CentriVision/conf.ini`
 
-[ini] 
+```[ini]
+# mpirun_path = mpirun 非必需
+mpirun_path = /home/charles/anaconda3/bin/mpirun
+trf_path = /usr/bin/trf
+# MAFFT v7.490
+mafft_path = /usr/bin/mafft
+# MUSCLE v3.8.1551
+muscle_path = /usr/bin/muscle
+# CLUSTAL 2.1
+clustalw_path = /usr/bin/clustalw
+# 1.2.4
+clustalo_path = /usr/bin/clustalo
+blast_path = /usr/bin/
+# Bowtie 2 version 2.4.4
+bowtie2_path = /usr/bin/
 
-trf_path = /usr/bin/trf 
+```
 
-mafft_path = /usr/bin/mafft 
-
-muscle_path = /usr/bin/muscle 
 
 
 使用vim或其它编辑器修改对应依赖软件位置TRF\Mafft\Muscle 并保存
