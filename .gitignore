@@ -1,0 +1,17 @@
+build/
+dist/
+*.egg-info/
+ana-dotplot/
+CHM13/
+data/
+doc/
+ref/
+test_old/
+
+
+
+
+
+
+
+
