@@ -4,7 +4,7 @@
 
 ## At present there is no detailed manual for this application, you will simply have to play around and see what happens.
 📖 用户手册正在紧锣密鼓地编写中！  
-I'm working hard on a clear and practical guide—stay tuned!
+I'm working hard on a clear and practical guide—stay tuned!  
 如有疑问或建议，随时提 Issue，我们一起把它打磨得更好。  
 Questions or ideas? Open an issue and let’s make it better together.
 
