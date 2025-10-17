@@ -468,7 +468,7 @@ ${\color{red}\textbf{切片大小}}$ 与分辨率和计算机内存大小挂钩
 ---
 
 ### 快速比对 -e EDISTALN ${\color{orange}\textbf{整体点图比对}}$  
-拆分着丝粒并扫描重复序列。  
+拆分着丝粒并快速比对。  
 
 查看参数：  
 ```bash
@@ -496,10 +496,10 @@ cpu = 8
 out_file = out file (\*.tsv)
 ```
 参数详解：  
-centri_sequence = centri file  
-window = 2000  
-cpu = 8  
-out_file = out file (\*.tsv)  
+centri_sequence = centri file 着丝粒fasta文件  
+window = 2000 切片比对宽度  
+cpu = 8 多进程  
+out_file = out file (\*.tsv) 比对结果输出  
 
 功能执行  
 命令：  
@@ -509,8 +509,8 @@ CentriVision -e total.conf
 ---
 
 
-### 快速比对 -ed EDISTDOT ${\color{orange}\textbf{整体点图}}$  
-拆分着丝粒并扫描重复序列。  
+### 大型点图绘制 -ed EDISTDOT ${\color{orange}\textbf{整体点图}}$  
+比对结果绘制。  
 
 查看参数：  
 ```bash
@@ -555,24 +555,24 @@ levels = 1:1:0
 q_s = 1:1
 ```
 参数详解：  
-genepairs = colinearity file  
-genepairsfile_type = EdistAln/BLAST/MCScanX/ColinearScan  
-gff1 =  gff1 file  
-gff2 =  gff2 file  
-lens1 = lens1 file  
-lens2 = lens2 file  
+genepairs = colinearity file 比对结果文件  
+genepairsfile_type = EdistAln/BLAST/MCScanX/ColinearScan 比对结果格式  
+gff1 =  gff1 file gff文件  
+gff2 =  gff2 file gff文件  
+lens1 = lens1 file lens文件  
+lens2 = lens2 file lens文件  
 genome1_name =  Genome1 name  
 genome2_name =  Genome2 name  
-position = order  
-blast_reverse = false  
-block = 0  
-markersize = 0.5  
-figsize = 10,10  
-savefig = savefile(.png, .pdf, .svg)  
-genome_name_size = 30  
-chr_name_size = 20  
-tandem = True  
-levels = 1:1:0  
+position = order/end order使用相对位置，end使用绝对位置  
+blast_reverse = false 是否需要交换顺序  
+block = 0 最断共线性  
+markersize = 0.5 点大小  
+figsize = 10,10 图片比例  
+savefig = savefile(.png, .pdf, .svg) 保存格式  
+genome_name_size = 30 基因组名字体大小  
+chr_name_size = 20 染色体名字体大小  
+tandem = True 是否去除串联重复序列  
+levels = 1:1:0 blast结果显示比例  
 q_s = 1:1  
 
 功能执行  
@@ -659,8 +659,8 @@ CentriVision -md total.conf
 
 ${\color{red}\textbf{切片大小}}$ 与分辨率和计算机内存大小挂钩，大型矩阵极其消耗内存；对于具有 ${\color{red}\textbf{超大着丝粒}}$ 的物种，切片数量非常多，是否需要输出所有自相似矩阵图以及比对矩阵需要适当选择，可利用输出文件可选的生成对应切片的自相似矩阵图和比对矩阵
 
-### 统计 -c COUNT_FILE ${\color{orange}\textbf{统计}}$  
-拆分着丝粒并扫描重复序列。  
+### 统计 -c COUNT_FILE ${\color{orange}\textbf{统计绘图}}$  
+统计着丝粒重复单元信息。  
 
 查看参数：  
 ```bash
@@ -699,21 +699,16 @@ out_file = new dotplot file
 savefile = save file (\*.png, \*.pdf, \*.svg)
 ```
 参数详解：  
-dot_file = dotplot file  
-# 计入统计的重复单元长度范围  
-lmmin = 8  
-lmmax = 1000  
-# 分箱宽度  
-bin_size = 10  
-# 关注前几个柱体  
-peak_index = 1  
-# 关注其它柱体  
-peak_indices = None or Other bars example: 1,2,3  
-# y_break_min不为0时绘制断轴图，设置省略范围  
-y_break_min = 0  
-y_break_max = 0  
-out_file = new dotplot file  
-savefile = save file (\*.png, \*.pdf, \*.svg)  
+dot_file = dotplot file md模块输出文件  
+lmmin = 8 计入统计的最小重复单元长度   
+lmmax = 1000 计入统计的最大重复单元长度  
+bin_size = 10 分箱宽度  
+peak_index = 1 关注前几个柱体   
+peak_indices = None or Other bars example: 1,2,3 关注其它柱体  
+y_break_min = 0 y_break_min不为0时绘制断轴图，设置省略范围下限  
+y_break_max = 0 设置省略范围上限  
+out_file = new dotplot file 过滤md模块输出文件  
+savefile = save file (\*.png, \*.pdf, \*.svg) 可视化输出  
 
 功能执行  
 命令：  
@@ -723,8 +718,8 @@ CentriVision -c total.conf
 ---
 
 
-### 快速比对 -m MONOMER ${\color{orange}\textbf{整体点图比对}}$  
-拆分着丝粒并扫描重复序列。  
+### 重复单体拆分 -m MONOMER ${\color{orange}\textbf{拆分单体}}$  
+将较为均匀的重复区域拆分为单体。  
 
 查看参数：  
 ```bash
@@ -752,9 +747,9 @@ seed = 320
 window = 20
 ```
 参数详解：  
-centri_sequence = centri file  
-seed = 320  
-window = 20  
+centri_sequence = centri file 着丝粒fasta文件  
+seed = 320 提示重复单元长度  
+window = 20 允许的差异范围  
 
 功能执行  
 命令：  
@@ -763,7 +758,7 @@ CentriVision -m total.conf
 ```
 ---
 
-### 快速比对 -s SEQSIGIL ${\color{orange}\textbf{整体点图比对}}$  
+### 单体模式查询 -s SEQSIGIL ${\color{orange}\textbf{重复单体logo图}}$  
 拆分着丝粒并扫描重复序列。  
 
 查看参数：  
@@ -797,15 +792,13 @@ title_fontsize = 20
 axis_fontsize = 18
 ```
 参数详解：  
-monomer_seq = monomer file  
-align_software = muscle or mafft or clustalw or clustalo  
-missing_threshold = 0.5  
-split_position = 150  
-savefig = savefile(.png, .pdf, .svg)  
-
-# 可调参数：标题和坐标轴字体大小  
-title_fontsize = 20  
-axis_fontsize = 18  
+monomer_seq = monomer file m模块拆分的重复单体fasta文件  
+align_software = muscle or mafft or clustalw or clustalo 比对方法  
+missing_threshold = 0.5 最低比对  
+split_position = 150 最大宽度  
+savefig = savefile(.png, .pdf, .svg) 可视化输出  
+title_fontsize = 20 标题字体大小  
+axis_fontsize = 18 坐标轴字体大小  
 
 功能执行  
 命令：  
@@ -814,8 +807,8 @@ CentriVision -s total.conf
 ```
 ---
 
-### 快速比对 -ic IC_SIGNIFICANCE ${\color{orange}\textbf{整体点图比对}}$  
-拆分着丝粒并扫描重复序列。  
+### 重复单体局部保守性 -ic IC_SIGNIFICANCE ${\color{orange}\textbf{香农信息熵}}$  
+扫描重复单体不同区域的保守性。  
 
 查看参数：  
 ```bash
@@ -859,24 +852,23 @@ correction = fdr_bh
 ```
 参数详解：  
 ic_dir = IC file idr  
-pattern = *.tsv  
+pattern = \*.tsv  
 min_window = 10  
 max_window = 10  
 step = 1  
-# 背景选择：within 使用同序列其余位点；global 使用全体位点作为背景（默认 within）  
-background = within  
-# 多重检验校正方法（statsmodels 支持的方法），默认 fdr_bh  
-# bonferroni：Bonferroni 校正  
-# sidak：Sidak 校正  
-# holm-sidak：Holm-Sidak 校正  
-# holm：Holm 校正  
-# simes-hochberg：Simes-Hochberg 校正  
-# hommel：Hommel 校正  
-# fdr_bh：Benjamini-Hochberg FDR 校正（默认）  
-# fdr_by：Benjamini-Yekutieli FDR 校正  
-# fdr_tsbh：Two-stage Benjamini-Hochberg FDR 校正  
-# fdr_tsbky：Two-stage Benjamini-Krieger-Yekutieli FDR 校正  
+background = within/global within 使用同序列其余位点;global 使用全体位点作为背景(默认 within)  
 correction = fdr_bh  
+#多重检验校正方法(statsmodels 支持的方法),默认 fdr_bh  
+#bonferroni:Bonferroni 校正  
+#sidak:Sidak 校正  
+#holm-sidak:Holm-Sidak 校正  
+#holm:Holm 校正  
+#simes-hochberg:Simes-Hochberg 校正  
+#hommel:Hommel 校正  
+#fdr_bh:Benjamini-Hochberg FDR 校正(默认)  
+#fdr_by:Benjamini-Yekutieli FDR 校正  
+#fdr_tsbh:Two-stage Benjamini-Hochberg FDR 校正  
+#fdr_tsbky:Two-stage Benjamini-Krieger-Yekutieli FDR 校正  
 
 功能执行  
 命令：  
@@ -885,8 +877,8 @@ CentriVision -ic total.conf
 ```
 ---
 
-### 快速比对 -sa SATAGE ${\color{orange}\textbf{整体点图比对}}$  
-拆分着丝粒并扫描重复序列。  
+### 相对突变距离 -sa SATAGE ${\color{orange}\textbf{Monomer相对年龄}}$  
+计算Monomer之间的相对距离，不指定祖先序列，只展示序列相对差异大小，理论上数值小可以代表最近扩增。  
 
 查看参数：  
 ```bash
@@ -933,29 +925,25 @@ n_bins = 8
 mismatches = 5
 ```
 参数详解：  
-genome_fa = centromere fasta  
-blast = True  
-monomers_fa = monomer fasta  
-blast_output = blast_results.tsv  
-blast_hits_file = monomer_blast_hits.png  
-age = True  
-monomer_age_file = monomer_age.tsv  
-age_plot_file = monomer_age.png  
-# monomer 环境窗口  
-window_size = 10000  
-# kmer 长度  
-k = 5  
-
-# 可调参数：标题和坐标轴字体大小  
-distance_threshold = 0.6  
-chrom_label = 20  
-xlabel = 18  
-xtick = 16  
-colorbar_label = 18  
-legend_fontsize = 18  
-discrete_colormap = False  
-n_bins = 8  
-mismatches = 5  
+genome_fa = centromere fasta 着丝粒fasta序列  
+blast = True 需要blast，若已有blast结果则设置为False  
+monomers_fa = monomer fasta 重复单元种子文件  
+blast_output = blast_results.tsv blast比对结果  
+blast_hits_file = monomer_blast_hits.png 重复单元分布图  
+age = True True表示需要推断相对突变距离，若有其它计算方法得到则设置为False  
+monomer_age_file = monomer_age.tsv 相对突变距离文件  
+age_plot_file = monomer_age.png 带年龄的重复单元分布图  
+window_size = 10000 monomer 环境窗口  
+k = 5 kmer 长度  
+distance_threshold = 0.6 序列相似性或距离的阈值  
+chrom_label = 20 染色体标签（或其它分类标签）字体大小  
+xlabel = 18 X 轴标题的字体大小  
+xtick = 16 X 轴刻度字体大小  
+colorbar_label = 18 色条标签的字体大小  
+legend_fontsize = 18 图例文字的字体大小  
+discrete_colormap = False 是否使用离散配色  
+n_bins = 8 离散配色时，颜色条分成多少个颜色块  
+mismatches = 5 允许的最大不匹配数  
 
 功能执行  
 命令：  
@@ -964,8 +952,8 @@ CentriVision -sa total.conf
 ```
 ---
 
-### 快速比对 -cd COMMUNITY_DETECTION ${\color{orange}\textbf{整体点图比对}}$  
-拆分着丝粒并扫描重复序列。  
+### 切片种子序列聚类 -cd COMMUNITY_DETECTION ${\color{orange}\textbf{聚类}}$  
+根据md模块得到的每个切片的采样进行聚类，划分不同的重复单元组。  
 
 查看参数：  
 ```bash
@@ -994,11 +982,11 @@ alignment = 75
 out_file = out community
 ```
 参数详解：  
-fasta_file = fatsa file  
-gap = 10  
-identity = 75  
-alignment = 75  
-out_file = out community  
+fasta_file = fatsa file md模块得到的种子文件  
+gap = 10 比对时允许存在的最大gap  
+identity = 75 分组最低相似度  
+alignment = 75 分组最低匹配长度比例  
+out_file = out community 社区文件  
 
 功能执行  
 命令：  
@@ -1007,8 +995,8 @@ CentriVision -cd total.conf
 ```
 ---
 
-### 快速比对 -cm REPEAT_COMMUNITY_MAP ${\color{orange}\textbf{整体点图比对}}$  
-拆分着丝粒并扫描重复序列。  
+### 社区在所有着丝粒上的分布 -cm REPEAT_COMMUNITY_MAP ${\color{orange}\textbf{社区分布}}$  
+cd聚类得到的社区在所有着丝粒上的分布。  
 
 查看参数：  
 ```bash
@@ -1042,16 +1030,16 @@ step = 5000
 savefile = save file (\*.png, \*.pdf, \*.svg)
 ```
 参数详解：  
-community_file = community file  
-lens = lens file  
-repeat_gff = CentriVision repeat gff  
-focus_areas = areas_file1,areas_file2 or None  
-focus_name = areas_name1:red,areas_name2:green or None  
-model = global or local  
-top = 10  
-windows = 50000  
-step = 5000  
-savefile = save file (\*.png, \*.pdf, \*.svg)  
+community_file = community file cd模块的到的社区文件  
+lens = lens file 着丝粒的lens文件  
+repeat_gff = CentriVision repeat gff cd模块输出的切片gff文件  
+focus_areas = areas_file1,areas_file2 or None 关注区域(一般时ChIP先验着丝粒区域)可以输入多个文件  
+focus_name = areas_name1:red,areas_name2:green or None 配色设置，每个文件对应一个名字一个颜色  
+model = global or local 关注全局前top个社区还是单条着丝粒的前top个社区  
+top = 10 只可视化数量靠前的社区分布  
+windows = 50000 滑窗大小  
+step = 5000 滑窗每次移动距离  
+savefile = save file (\*.png, \*.pdf, \*.svg) 可视化输出  
 
 功能执行  
 命令：  
@@ -1060,8 +1048,8 @@ CentriVision -cm total.conf
 ```
 ---
 
-### 快速比对 -gc GET_CENTRI ${\color{orange}\textbf{整体点图比对}}$  
-拆分着丝粒并扫描重复序列。  
+### 提取着丝粒 -gc GET_CENTRI ${\color{orange}\textbf{提取序列}}$  
+根据gff提取对应的区域。  
 
 查看参数：  
 ```bash
@@ -1089,10 +1077,9 @@ gff_file = centri gff
 out_fasta = out fasta
 ```
 参数详解：  
-genome_file = genome file  
-# 确保着丝粒gff中的染色体和基因组染色体一致  
-gff_file = centri gff  
-out_fasta = out fasta  
+genome_file = genome file 基因组fasta文件  
+gff_file = centri gff 着丝粒位置文件  
+out_fasta = out fasta 提取结果  
 
 功能执行  
 命令：  
@@ -1101,8 +1088,8 @@ CentriVision -gc total.conf
 ```
 ---
 
-### 快速比对 -gf GET_CENTGFF ${\color{orange}\textbf{整体点图比对}}$  
-拆分着丝粒并扫描重复序列。  
+### 提取着丝粒gff -gf GET_CENTGFF ${\color{orange}\textbf{提取着丝粒区域gff}}$  
+从全基因组注释文件中提取着丝粒区域的注释信息。  
 
 查看参数：  
 ```bash
@@ -1132,12 +1119,12 @@ locmin = 9
 output_file = centri gff
 ```
 参数详解：  
-centromere_file = centri file  
-gff_file = genome gff  
-start = 3  
-end = 4  
-locmin = 9  
-output_file = centri gff  
+centromere_file = centri file 着丝粒位置文件  
+gff_file = genome gff 基因组注释文件gff/gff3格式  
+start = 3 起始位置列号  
+end = 4 终止位置列号  
+locmin = 9 最大列数  
+output_file = centri gff 输出结果  
 
 功能执行  
 命令：  
@@ -1146,8 +1133,8 @@ CentriVision -gf total.conf
 ```
 ---
 
-### 快速比对 -gr GET_REPEAT ${\color{orange}\textbf{整体点图比对}}$  
-拆分着丝粒并扫描重复序列。  
+### 提取重复信息 -gr GET_REPEAT ${\color{orange}\textbf{提取repeatmasker/EDTA文件}}$  
+从常用注释软件的结果中提取指定信息，例如提取Gypsy注释/Copia注释。  
 
 查看参数：  
 ```bash
@@ -1176,11 +1163,11 @@ classtag = Classification
 out_path = out path
 ```
 参数详解：  
-genome = genome file  
-repeat_gff3 = repeat file  
-idtag = ID  
-classtag = Classification  
-out_path = out path  
+genome = genome file 基因组文件  
+repeat_gff3 = repeat file 重复序列注释文件  
+idtag = ID 提取目标标签  
+classtag = Classification 目标分类标记Gypsy/Copia等  
+out_path = out path 输出文件  
 
 功能执行  
 命令：  
@@ -1188,7 +1175,5 @@ out_path = out path
 CentriVision -gr total.conf
 ```
 ---
-
-
 
 ***
