@@ -112,6 +112,7 @@ options:
 覆盖式命令：  `CentriVision -trf ? > total.conf`
 追加式命令：  `CentriVision -trf ? >> total.conf`
 配置文件：
+```
 [TRF]
 genome_file = genome file
 lens = lens file
@@ -124,6 +125,7 @@ step = 5000
 gap = 40
 centrigff = centri gff
 centrifasta = centri fasta
+```
 
 ### 着丝粒点阵图 -d
 
