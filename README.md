@@ -139,15 +139,25 @@ centrifasta = centri fasta
 ```
 
 genome_file = genome file 基因组fasta文件
+
 lens = lens file 染色体文件
+
 chip_seq = chip_seq map file or None ChIP-seq或其它数据的先验着丝粒位置文件
+
 colors = hish,centri,chip or hish,centri,None or #38b48b,#1e50a2,#d7003a 颜色配置
+
 trfgff = out gff TRF输出gff3结果
+
 trffasta = out fasta TRF输出fasta文件
+
 windows = 10000 重复序列密度窗口跨度
+
 step = 5000 重复序列密度窗口滑动步长
+
 gap = 40 重复区域连续性容错宽度 gap\*windows
+
 centrigff = centri gff 鉴定候选区结果
+
 centrifasta = centri fasta 候选区fasta文件
 
 
