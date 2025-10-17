@@ -109,12 +109,15 @@ options:
 </p>
 
 查看参数：`CentriVision -trf ?`
+![chr02_1_s98](https://github.com/user-attachments/assets/a4480953-31ee-461d-a35e-cd71fd3e5dbc)
+
 
 参数重定向到配置文件total.conf
 
 覆盖式命令：  `CentriVision -trf ? > total.conf`
 
 追加式命令：  `CentriVision -trf ? >> total.conf`
+<img width="881" height="309" alt="image" src="https://github.com/user-attachments/assets/7be1829e-65e6-4b83-b05a-6bca0711766c" />
 
 配置文件：
 
@@ -132,6 +135,28 @@ gap = 40
 centrigff = centri gff
 centrifasta = centri fasta
 ```
+
+```
+[TRF]
+genome_file = NIP-T2T-osa2.fa
+lens = osa.lens
+chip_seq = None
+colors = #38b48b,#1e50a2,#d7003a
+trfgff = out.gff
+trffasta = out.fasta
+windows = 10000
+step = 5000
+gap = 40
+centrigff = centri.gff
+centrifasta = centri.fasta
+```
+<img width="857" height="648" alt="image" src="https://github.com/user-attachments/assets/3e2e19d7-7256-4cd9-9495-047d7f29a4be" />
+<p align="center">
+  <img src="https://github.com/lkiko/CentriVision/blob/main/video/trf-run.gif?raw=true" width="100%">
+</p>
+<img width="884" height="797" alt="image" src="https://github.com/user-attachments/assets/83d37692-95db-4380-b960-89230164c18a" />
+
+
 
 ### 着丝粒点阵图 -d
 
