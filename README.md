@@ -14,9 +14,13 @@ Questions or ideas? Open an issue and let’s make it better together.
 **<span style="color:orange;">橙色加粗</span>**
 **<span style="color:#FF00FF;">自定义紫色加粗</span>**
 <span style="color:gray;">灰色文本</span>
+***<span style="color:purple;">紫色加粗斜体文字</span>***
+
 -->
-**<span style="color:#FF00FF;">自定义紫色加粗</span>**
-<span style="color:gray;">灰色文本</span>
+
+**<span style="color:#FF00FF;">自定义紫色加粗</span>**  
+
+<span style="color:gray;">灰色文本</span>  
 
 **<span style="color:orange;">CentriVision</span>** 是一个用于研究基因组着丝粒结构的软件工具。
 ---
