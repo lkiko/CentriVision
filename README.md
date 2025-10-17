@@ -367,6 +367,106 @@ CentriVision -ps total.conf
 
 ---
 
+### 着丝粒热图 -hm HEATMAP ${\color{orange}\textbf{热图}}$  
+着丝粒热图  
+
+查看参数：  
+```bash
+CentriVision -hm ?
+```
+
+![md参数](https://github.com/user-attachments/assets/47e4323a-eef5-44c9-817d-bfb597a676eb)
+
+
+参数重定向到配置文件total.conf
+
+覆盖式命令：  
+```bash
+CentriVision -hm ? > total.conf
+```
+
+追加式命令：  
+```bash
+CentriVision -hm ? >> total.conf
+```
+
+配置文件：  
+```
+# 图片生成可以中断再运行
+[Heatmap]
+centromere_file = genome file
+align_software = ialign or muscle or mafft or hamming
+# 比对模式，global考虑全局相似性，全部序列比对；local序列两两比对; ialign c模块快速比对
+model = global or local
+# 负值表示反向互补/反向
+reverse_complement = True/False
+# 软件支持离散着色和渐变着色 Discrete or Gradient
+color_mode = Discrete or Gradient
+# 选择是否需要绘制注释信息，GC,TRF,TE
+annotation = True/False
+trf_gff = None or gff:#e2041b
+te_gff = None or gff:#19448e
+gene_gff = None or gff:#b44c97
+chip_file = None or txt:#3eb370
+gcc = #0d0015
+# 确保着丝粒拆分的不能太短，协调计算机的内存、算力和着丝粒长度/global模式下，是最短着丝粒的切割份数，local模式下，是每条着丝粒单独拆分
+split = 1000
+# segment_length为0时split生效，若segment_length不为零为拆分长度
+segment_length = 0
+out_path = out path
+```
+参数详解：  
+centromere_file = genome file 着丝粒文件  
+align_software = ialign/muscle/mafft/hamming 比对软件，可以调用现有软件，也可以使用ialign c模块快速比对  
+model = global/local 比对模式，global考虑全局相似性，全部序列同时比对；local序列两两比对  
+reverse_complement = True/False 负值表示反向互补/反向  
+color_mode = Discrete/Gradient 软件支持离散着色和渐变着色 Discrete or Gradient  
+annotation = True/False 选择是否需要绘制注释信息，GC,TRF,TE  
+trf_gff = None or gff:#e2041b None表示无注释，若有注释则使用:分割文件名和展示颜色  
+te_gff = None or gff:#19448e  
+gene_gff = None or gff:#b44c97  
+chip_file = None or txt:#3eb370  
+gcc = #0d0015 GC含量展示颜色  
+split = 1000 确保着丝粒拆分的不能太短，协调计算机的内存、算力和着丝粒长度/global模式下，是最短着丝粒的切割份数，local模式下，是每条着丝粒单独拆分  
+segment_length = 0 segment_length为0时split生效，若segment_length不为零为拆分长度  
+out_path = out path 输出路径  
+
+修改配置文件如下：  
+```
+[Heatmap]
+centromere_file = centri.fasta
+align_software = ialign
+model = local
+reverse_complement = True
+color_mode = Gradient
+annotation = False
+trf_gff = None
+te_gff = None
+gene_gff = None
+chip_file = None
+gcc = #0d0015
+split = 1000
+segment_length = 0
+out_path = hmap
+
+```
+
+![md参数修改](https://github.com/user-attachments/assets/121aaaa2-f386-46f6-a6c7-6341faf6fde0)
+
+功能执行  
+命令：  
+```bash
+CentriVision -hm total.conf
+```
+
+结果：  
+重复序列相似性热图：
+![s02_1](https://github.com/lkiko/CentriVision/assets/57740432/d0b95ae5-d83f-4997-9410-2768ddc296bf)
+
+${\color{red}\textbf{切片大小}}$ 与分辨率和计算机内存大小挂钩，大型矩阵极其消耗内存；对于具有${\color{red}\textbf{超大着丝粒}}$ 的物种，切片数量非常多，是否需要输出所有自相似矩阵图以及比对矩阵需要适当选择，可利用输出文件可选的生成对应切片的自相似矩阵图和比对矩阵
+
+---
+
 ### 重复模式 -md DOTPLOT ${\color{orange}\textbf{分块点图}}$  
 拆分着丝粒并扫描重复序列。  
 
@@ -442,73 +542,6 @@ CentriVision -md total.conf
 查找重复单元的相位纠正图
 ![chr02_1_s98](https://github.com/lkiko/CentriVision/assets/57740432/0de54b96-94bd-4c05-a60a-b60e64dd8020)
 
-${\color{red}\textbf{切片大小与分辨率和计算机内存挂钩，大型矩阵极其消耗内存；对于具有超大着丝粒的物种，切片数量非常多，是否需要输出所有自相似矩阵图以及比对矩阵需要适当选择，可利用输出文件可选的生成对应切片的自相似矩阵图和比对矩阵}}$  
-
-
-
-***
-
-### 着丝粒热图 -hmap
-
-
-查看对应参数
-
-命令：  
-```bash
-CentriVision -hmap ?
-```
-
-将参数重定向到配置文件total.conf
-
-覆盖式命令：  
-```bash
-CentriVision -hmap ? > total.conf
-``` 
-
-追加式命令：  
-```bash
-CentriVision -hmap ? >> total.conf
-``` 
-
-配置文件：
-
-[Heatmap] 
-
-centromere_file = genome file 
-
-align_software = muscle or mafft 
-
-color_mode = Discrete or Gradient 
-
-split = 1000 
-
-out_path = out path 
-
-
-参数解释： 
-
-centromere_file 着丝粒fasta文件 
-
-align_software 多序列比对软件支持 muscle or mafft 
-
-color_mode 颜色模式支持 Discrete or Gradient 
-
-split 每着丝粒拆分为1000等份 
-
-out_path 输出路径 
-
-
-功能执行：
-
-命令：  
-```bash
-CentriVision -hmap total.conf
-```
-
-结果
-
-重复序列相似性热图：
-![s02_1](https://github.com/lkiko/CentriVision/assets/57740432/d0b95ae5-d83f-4997-9410-2768ddc296bf)
-
+${\color{red}\textbf{切片大小}}$ 与分辨率和计算机内存大小挂钩，大型矩阵极其消耗内存；对于具有${\color{red}\textbf{超大着丝粒}}$ 的物种，切片数量非常多，是否需要输出所有自相似矩阵图以及比对矩阵需要适当选择，可利用输出文件可选的生成对应切片的自相似矩阵图和比对矩阵
 
 ***
