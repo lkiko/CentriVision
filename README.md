@@ -156,7 +156,7 @@ options:
 
 ```
 ***
-### 着丝粒鉴定 -trf ${\color{orange}\textbf{TRF(Tandem Repeat Finder)}}$  
+### 着丝粒鉴定 -trf TRF ${\color{orange}\textbf{TRF(Tandem Repeat Finder)}}$  
 调用TRF(Tandem Repeat Finder)扫描重复序列，根据重复序列判断着丝粒，也可以输入现有的重复注释gff3文件，同时适用于 ${\color{orange}\textbf{串联重复类型和转座子类型}}$ 的着丝粒。  
 <p align="center">
   <img src="https://github.com/lkiko/CentriVision/blob/main/video/trf.gif?raw=true" width="100%">
@@ -184,8 +184,7 @@ CentriVision -trf ? >> total.conf
 
 ![参数](https://github.com/user-attachments/assets/7be1829e-65e6-4b83-b05a-6bca0711766c)
 
-配置文件：
-
+配置文件：  
 ```
 [TRF]
 genome_file = genome file
@@ -237,8 +236,7 @@ osa2  TRF TandemRepeat  25152 25199       ID=TRF00007;PeriodSize=24;CopyNumber=2
 osa2  TRF TandemRepeat  25446 25500       ID=TRF00008;PeriodSize=6;CopyNumber=9.2;Consensus=ATATAG
 ......
 ```
-
-
+修改配置文件如下：  
 ```
 [TRF]
 genome_file = NIP-T2T-osa2.fa
@@ -270,6 +268,48 @@ CentriVision -trf total.conf
 
 ![结果](https://github.com/user-attachments/assets/83d37692-95db-4380-b960-89230164c18a)
 鉴定结果判断
+
+TRF在面对大区域重复的时候扫描特别慢，可以单独切片运行TRF注释  
+
+#### 已有注释文件时使用 -cf CENTRIFINDER 模块，输入文件包括 ${\color{orange}\textbf{串联重复注释文件或者转座子注释文件}}$  
+
+覆盖式命令：  
+```bash
+CentriVision -cf ? > total.conf
+```
+
+追加式命令：  
+```bash
+CentriVision -cf ? >> total.conf
+```
+配置文件：  
+```
+[Centrifinder]
+genome_file = genome file
+lens = lens file
+chip_seq = chip_seq map file or None
+colors = hish,centri,chip or hish,centri,None or #38b48b,#1e50a2,#d7003a
+trfgff = out gff
+windows = 10000
+step = 5000
+gap = 40
+centrigff = centri gff
+centrifasta = centri fasta
+```
+配置文件和trf模块类似  
+genome_file = genome file 基因组fasta文件  
+lens = lens file 染色体文件  
+chip_seq = chip_seq map file or None ChIP-seq或其它数据的先验着丝粒位置文件  
+colors = hish,centri,chip or hish,centri,None or #38b48b,#1e50a2,#d7003a 颜色配置  
+trfgff = out gff ${\color{orange}\textbf{串联重复注释文件或者转座子注释文件}}$  
+trffasta = out fasta TRF输出fasta文件  
+windows = 10000 重复序列密度窗口跨度  
+step = 5000 重复序列密度窗口滑动步长  
+gap = 40 重复区域连续性容错宽度 gap\*windows  
+centrigff = centri gff 鉴定候选区结果  
+centrifasta = centri fasta 候选区fasta文件  
+
+
 
 ---
 
