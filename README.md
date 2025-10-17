@@ -362,73 +362,85 @@ CentriVision -ps total.conf
 
 ---
 
-### 着丝粒点阵图 -d
+### 重复模式 -md DOTPLOT ${\color{orange}\textbf{分块点图}}$  
+拆分着丝粒并扫描重复序列。  
 
-查看对应参数
-
-命令：  
+查看参数：  
 ```bash
-CentriVision -d ?
+CentriVision -md ?
 ```
 
-将参数重定向到配置文件total.conf
+![md参数](https://github.com/user-attachments/assets/47e4323a-eef5-44c9-817d-bfb597a676eb)
+
+
+参数重定向到配置文件total.conf
 
 覆盖式命令：  
 ```bash
-CentriVision -d ? > total.conf
+CentriVision -md ? > total.conf
 ```
 
 追加式命令：  
 ```bash
-CentriVision -d ? >> total.conf
+CentriVision -md ? >> total.conf
 ```
 
-配置文件：
+![md参数修改](https://github.com/user-attachments/assets/121aaaa2-f386-46f6-a6c7-6341faf6fde0)
 
-[Dotplot] 
+配置文件：  
+```
+[Dotplot]
+# 窗口宽度根据内存大设定默认4000
+genome_file = genome file
+minlength = 10
+windows = 4000
+poly = False
+plot = False
+temp = False
+cpu = 16
+outfile = out dotplot
+```
 
-genome_file = genome file 
+genome_file = genome file 基因组fasta文件  
+lens = lens file 染色体文件  
+chip_seq = chip_seq map file or None ChIP-seq或其它数据的先验着丝粒位置文件  
+colors = hish,centri,chip or hish,centri,None or #38b48b,#1e50a2,#d7003a 颜色配置  
+trfgff = out gff TRF输出gff3结果  
+trffasta = out fasta TRF输出fasta文件  
+windows = 10000 重复序列密度窗口跨度  
+step = 5000 重复序列密度窗口滑动步长  
+gap = 40 重复区域连续性容错宽度 gap\*windows  
+centrigff = centri gff 鉴定候选区结果  
+centrifasta = centri fasta 候选区fasta文件  
 
-windows = 4000 
-
-minlength = 8 
-
-poly = False 
-
-cpu = 16 
-
-outfile = out dotplot 
-
-
-
-参数解释：
-
-genome_file 着丝粒fasta文件 
-
-windows 窗口宽度 
-
-minlength 最短重复片段 
-
-poly 单碱基重复去除 
-
-cpu 线程数 
-
-outfile 着丝粒特征文件 
-
-
-功能执行：
-
+修改配置文件如下：  
+```
+[Dotplot]
+# 窗口宽度根据内存大设定默认4000
+genome_file = centri.fasta
+minlength = 8
+windows = 4000
+poly = False
+plot = True
+temp = False
+cpu = 8
+outfile = out.dotplot
+```
+功能执行  
 命令：  
 ```bash
-CentriVision -d total.conf
+CentriVision -md total.conf
 ```
 
-结果：
+结果：  
 点阵图：展示序列重复规律的点图
 ![chr02_1_s98-dotplot](https://github.com/lkiko/CentriVision/assets/57740432/47a3700d-c49d-4000-8f67-3ee4c7c1ffaa)
 
 查找重复单元的相位纠正图
 ![chr02_1_s98](https://github.com/lkiko/CentriVision/assets/57740432/0de54b96-94bd-4c05-a60a-b60e64dd8020)
+
+$${\color{red}\textbf{TRF在面对大区域重复的时候扫描特别慢，可以单独切片运行TRF注释}}$$  
+
 
 
 ***
