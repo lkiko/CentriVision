@@ -137,6 +137,17 @@ gap = 40
 centrigff = centri gff
 centrifasta = centri fasta
 ```
+# genome_file = genome file 基因组fasta文件
+# lens = lens file 染色体文件
+# chip_seq = chip_seq map file or None ChIP-seq或其它数据的先验着丝粒位置文件
+# colors = hish,centri,chip or hish,centri,None or #38b48b,#1e50a2,#d7003a 颜色配置
+# trfgff = out gff TRF输出gff3结果
+# trffasta = out fasta TRF输出fasta文件
+# windows = 10000 重复序列密度窗口跨度
+# step = 5000 重复序列密度窗口滑动步长
+# gap = 40 重复区域连续性容错宽度 gap*windows
+# centrigff = centri gff 鉴定候选区结果
+# centrifasta = centri fasta 候选区fasta文件
 
 ```
 [TRF]
@@ -152,12 +163,20 @@ gap = 40
 centrigff = centri.gff
 centrifasta = centri.fasta
 ```
-<img width="857" height="648" alt="image" src="https://github.com/user-attachments/assets/3e2e19d7-7256-4cd9-9495-047d7f29a4be" />
+功能执行：
+
+命令： `CentriVision -trf total.conf`
+
 <p align="center">
   <img src="https://github.com/lkiko/CentriVision/blob/main/video/trf-run.gif?raw=true" width="100%">
 </p>
-<img width="884" height="797" alt="image" src="https://github.com/user-attachments/assets/83d37692-95db-4380-b960-89230164c18a" />
+输出结果:
 
+![图示](https://github.com/user-attachments/assets/3e2e19d7-7256-4cd9-9495-047d7f29a4be)
+淡蓝色为重复序列分布图，蓝色区域为着丝粒候选区域
+
+![结果](https://github.com/user-attachments/assets/83d37692-95db-4380-b960-89230164c18a)
+鉴定结果判断
 
 
 ### 着丝粒点阵图 -d
