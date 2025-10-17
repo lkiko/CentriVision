@@ -109,7 +109,8 @@ options:
 </p>
 
 查看参数：`CentriVision -trf ?`
-![chr02_1_s98](https://github.com/user-attachments/assets/a4480953-31ee-461d-a35e-cd71fd3e5dbc)
+
+![参数](https://github.com/user-attachments/assets/a4480953-31ee-461d-a35e-cd71fd3e5dbc)
 
 
 参数重定向到配置文件total.conf
@@ -117,7 +118,8 @@ options:
 覆盖式命令：  `CentriVision -trf ? > total.conf`
 
 追加式命令：  `CentriVision -trf ? >> total.conf`
-<img width="881" height="309" alt="image" src="https://github.com/user-attachments/assets/7be1829e-65e6-4b83-b05a-6bca0711766c" />
+
+![参数](https://github.com/user-attachments/assets/7be1829e-65e6-4b83-b05a-6bca0711766c)
 
 配置文件：
 
