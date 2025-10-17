@@ -103,6 +103,27 @@ options:
 
 ```
 ***
+### 着丝粒鉴定 -trf
+<p align="center">
+  <img src="https://github.com/lkiko/CentriVision/blob/main/video/trf.gif?raw=true" width="100%">
+</p>
+查看参数：`CentriVision -trf ?`
+参数重定向到配置文件total.conf
+覆盖式命令：  `CentriVision -trf ? > total.conf`
+追加式命令：  `CentriVision -trf ? >> total.conf`
+配置文件：
+[TRF]
+genome_file = genome file
+lens = lens file
+chip_seq = chip_seq map file or None
+colors = hish,centri,chip or hish,centri,None or #38b48b,#1e50a2,#d7003a
+trfgff = out gff
+trffasta = out fasta
+windows = 10000
+step = 5000
+gap = 40
+centrigff = centri gff
+centrifasta = centri fasta
 
 ### 着丝粒点阵图 -d
 
