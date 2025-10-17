@@ -23,7 +23,9 @@ CentriVision 旨在提供一个简单而强大的工具，用于分析和可视�
 
 你可以使用 pip 来安装 CentriVision：
 
-```pip install CentriVision```
+```
+pip install CentriVision
+```
 
 或者，你也可以从本地安装 CentriVision 的 wheel 文件：
 
