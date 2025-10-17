@@ -45,19 +45,17 @@ ${\color{orange}\textbf{CentriVision}}$ 是一个用于研究 ${\color{orange}\t
 ${\color{orange}\textbf{CentriVision}}$ 旨在提供一个简单而强大的工具，用于分析和可视化基因组中着丝粒的结构。它支持从基因组中提取和分析着丝粒相关信息，并提供丰富的可视化功能，以帮助研究人员深入理解着丝粒的组织和功能。同时支持 ${\color{orange}\textbf{植物和动物}}$ 基因组。  
 ---
 
-## 安装
+## 安装方法  
 <p align="center">
   <img src="https://github.com/lkiko/CentriVision/blob/main/video/install.gif?raw=true" width="100%">
 </p>
 
-你可以使用 pip 来安装 CentriVision：
-
+你可以使用 ${\color{green}\textbf{pip(https://pypi.org/project/CentriVision/)}}$ 来安装 CentriVision：  
 ```bash
 pip install CentriVision
 ```
 
-或者，你也可以从本地安装 CentriVision 的 wheel 文件：
-
+或者，你也可以从本地安装 CentriVision 的 wheel 文件：  
 ```bash
 pip install CentriVision-x.x.x-py3-none-any.whl
 ```
@@ -68,13 +66,10 @@ pip install CentriVision-x.x.x-py3-none-any.whl
 conda create -n centrivision_env -c bioconda -c conda-forge openmpi trf mafft=7.490 muscle=3.8.1551 clustalw=2.1 clustalo=1.2.4 blast bowtie2=2.4.4
 
 ```
-
 激活环境  
 ```bash
 conda activate centrivision_env
 ```
-
-
 ---
 ## 配置：  
 **以下以 ubuntu操作系统 用户名为charles 的miniconda3 python3.13环境为例**  
