@@ -37,12 +37,12 @@ $${\color{red}\textbf{CentriVision}} \space {\color{blue}\textbf{Configuration}}
 这是行内颜色示例： ${\color{blue}blue}$  
 
 
-${\color{orange}\textbf{CentriVision}}$ 是一个用于研究基因组着丝粒结构的软件工具。
+${\color{orange}\textbf{CentriVision}}$ 是一个用于研究 ${\color{orange}\textbf{着丝粒}}$ 结构的软件工具。
 ---
 
 ## 简介
 
-CentriVision 旨在提供一个简单而强大的工具，用于分析和可视化基因组中着丝粒的结构。它支持从基因组中提取和分析着丝粒相关信息，并提供丰富的可视化功能，以帮助研究人员深入理解着丝粒的组织和功能。
+${\color{orange}\textbf{CentriVision}}$ 旨在提供一个简单而强大的工具，用于分析和可视化基因组中着丝粒的结构。它支持从基因组中提取和分析着丝粒相关信息，并提供丰富的可视化功能，以帮助研究人员深入理解着丝粒的组织和功能。同时支持 ${\color{orange}\textbf{植物和动物}}$ 基因组。  
 ---
 
 ## 安装
@@ -52,17 +52,28 @@ CentriVision 旨在提供一个简单而强大的工具，用于分析和可视�
 
 你可以使用 pip 来安装 CentriVision：
 
-```
+```bash
 pip install CentriVision
 ```
 
 或者，你也可以从本地安装 CentriVision 的 wheel 文件：
 
-```
+```bash
 pip install CentriVision-x.x.x-py3-none-any.whl
 ```
 
-软件依赖TRF,Mafft,Muscle,clustalw
+软件依赖TRF,Mafft,Muscle,clustalw  
+使用conda或者mamba配置环境命令  
+```bash
+conda create -n centrivision_env -c bioconda -c conda-forge openmpi trf mafft=7.490 muscle=3.8.1551 clustalw=2.1 clustalo=1.2.4 blast bowtie2=2.4.4
+
+```
+
+激活环境  
+```bash
+conda activate centrivision_env
+```
+
 
 ---
 ## 配置：
@@ -75,17 +86,17 @@ pip install CentriVision-x.x.x-py3-none-any.whl
 
 默认安装路径：
 
-```
+```bash
 /home/charles/miniconda3/lib/python3.13/site-packages/CentriVision/
 ```
 
 查看依赖文件：
 
-```
+```bash
 cat /home/charles/miniconda3/lib/python3.13/site-packages/CentriVision/conf.ini
 ```
 
-```
+```ini
 [ini]
 # mpirun_path = mpirun 非必需
 mpirun_path = /home/charles/miniconda3/bin/mpirun
@@ -103,13 +114,19 @@ blast_path = /usr/bin/
 bowtie2_path = /usr/bin/
 
 ```
-
-使用vim或其它编辑器修改对应依赖软件位置TRF\Mafft\Muscle 并保存
+使用vim或其它编辑器修改对应依赖软件位置TRF\Mafft\Muscle 并保存  
+路径查询  
+```bash
+which mafft
+which bowtie2
+which mpirun
+```
 
 ---
 
 ## 使用
-命令： ```
+命令：  
+```bash
 CentriVision -h
 ```
 
@@ -147,7 +164,8 @@ options:
   <img src="https://github.com/lkiko/CentriVision/blob/main/video/trf.gif?raw=true" width="100%">
 </p>
 
-查看参数：```
+查看参数：  
+```bash
 CentriVision -trf ?
 ```
 
@@ -156,11 +174,13 @@ CentriVision -trf ?
 
 参数重定向到配置文件total.conf
 
-覆盖式命令：  ```
+覆盖式命令：  
+```bash
 CentriVision -trf ? > total.conf
 ```
 
-追加式命令：  ```
+追加式命令：  
+```bash
 CentriVision -trf ? >> total.conf
 ```
 
@@ -237,7 +257,8 @@ centrifasta = centri.fasta
 ```
 功能执行：
 
-命令： ```
+命令：  
+```bash
 CentriVision -trf total.conf
 ```
 
@@ -258,17 +279,20 @@ CentriVision -trf total.conf
 
 查看对应参数
 
-命令： ```
+命令：  
+```bash
 CentriVision -d ?
 ```
 
 将参数重定向到配置文件total.conf
 
-覆盖式命令：  ```
+覆盖式命令：  
+```bash
 CentriVision -d ? > total.conf
 ```
 
-追加式命令：  ```
+追加式命令：  
+```bash
 CentriVision -d ? >> total.conf
 ```
 
@@ -307,7 +331,8 @@ outfile 着丝粒特征文件
 
 功能执行：
 
-命令： ```
+命令：  
+```bash
 CentriVision -d total.conf
 ```
 
@@ -326,17 +351,20 @@ CentriVision -d total.conf
 
 查看对应参数
 
-命令： ```
+命令：  
+```bash
 CentriVision -hmap ?
 ```
 
 将参数重定向到配置文件total.conf
 
-覆盖式命令：  ```
+覆盖式命令：  
+```bash
 CentriVision -hmap ? > total.conf
 ``` 
 
-追加式命令：  ```
+追加式命令：  
+```bash
 CentriVision -hmap ? >> total.conf
 ``` 
 
@@ -370,7 +398,8 @@ out_path 输出路径
 
 功能执行：
 
-命令： ```
+命令：  
+```bash
 CentriVision -hmap total.conf
 ```
 
