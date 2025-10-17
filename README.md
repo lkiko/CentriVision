@@ -18,6 +18,13 @@ $${\color{green}Success!}$$
 $${\color{orange}\textbf{Warning!}}$$
 $${\color{red}\textsf{Error!}}$$
 $${\color{blue}Use \space \texttt{CentriVision -trf}}$$
+$${\color{red}\textbf{红色加粗}}$$
+$${\color{orange}\textbf{橙色加粗}}$$
+$${\color{blue}\textbf{蓝色加粗}}$$
+$${\color{green}\textbf{绿色加粗}}$$
+$${\color{purple}\textbf{紫色加粗}}$$
+$${\color{red}\textbf{CentriVision}} \space {\color{blue}\textbf{Configuration}} \space {\color{green}\textbf{Completed!}}$$
+
 
 这是行内颜色示例：${\color{blue}blue}$
 
