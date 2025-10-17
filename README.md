@@ -29,7 +29,9 @@ pip install CentriVision
 
 或者，你也可以从本地安装 CentriVision 的 wheel 文件：
 
-```pip install CentriVision-x.x.x-py3-none-any.whl```
+```
+pip install CentriVision-x.x.x-py3-none-any.whl
+```
 
 软件依赖TRF,Mafft,Muscle,clustalw
 
@@ -44,11 +46,15 @@ pip install CentriVision
 
 默认安装路径：
 
-```/home/charles/miniconda3/lib/python3.13/site-packages/CentriVision/```
+```
+/home/charles/miniconda3/lib/python3.13/site-packages/CentriVision/
+```
 
 查看依赖文件：
 
-```cat /home/charles/miniconda3/lib/python3.13/site-packages/CentriVision/conf.ini```
+```
+cat /home/charles/miniconda3/lib/python3.13/site-packages/CentriVision/conf.ini
+```
 
 ```
 [ini]
@@ -74,7 +80,9 @@ bowtie2_path = /usr/bin/
 ---
 
 ## 使用
-命令： ```CentriVision -h```
+命令： ```
+CentriVision -h
+```
 
 ```
 usage: CentriVision [options]
@@ -110,16 +118,22 @@ options:
   <img src="https://github.com/lkiko/CentriVision/blob/main/video/trf.gif?raw=true" width="100%">
 </p>
 
-查看参数：```CentriVision -trf ?```
+查看参数：```
+CentriVision -trf ?
+```
 
 ![参数](https://github.com/user-attachments/assets/a4480953-31ee-461d-a35e-cd71fd3e5dbc)
 
 
 参数重定向到配置文件total.conf
 
-覆盖式命令：  ```CentriVision -trf ? > total.conf```
+覆盖式命令：  ```
+CentriVision -trf ? > total.conf
+```
 
-追加式命令：  ```CentriVision -trf ? >> total.conf```
+追加式命令：  ```
+CentriVision -trf ? >> total.conf
+```
 
 ![参数](https://github.com/user-attachments/assets/7be1829e-65e6-4b83-b05a-6bca0711766c)
 
@@ -194,7 +208,9 @@ centrifasta = centri.fasta
 ```
 功能执行：
 
-命令： ```CentriVision -trf total.conf```
+命令： ```
+CentriVision -trf total.conf
+```
 
 <p align="center">
   <img src="https://github.com/lkiko/CentriVision/blob/main/video/trf-run.gif?raw=true" width="100%">
@@ -213,13 +229,19 @@ centrifasta = centri.fasta
 
 查看对应参数
 
-命令： ```CentriVision -d ?```
+命令： ```
+CentriVision -d ?
+```
 
 将参数重定向到配置文件total.conf
 
-覆盖式命令：  ```CentriVision -d ? > total.conf```
+覆盖式命令：  ```
+CentriVision -d ? > total.conf
+```
 
-追加式命令：  ```CentriVision -d ? >> total.conf```
+追加式命令：  ```
+CentriVision -d ? >> total.conf
+```
 
 配置文件：
 
@@ -256,7 +278,9 @@ outfile 着丝粒特征文件
 
 功能执行：
 
-命令： ```CentriVision -d total.conf```
+命令： ```
+CentriVision -d total.conf
+```
 
 结果：
 点阵图：展示序列重复规律的点图
@@ -273,13 +297,19 @@ outfile 着丝粒特征文件
 
 查看对应参数
 
-命令： ```CentriVision -hmap ?```
+命令： ```
+CentriVision -hmap ?
+```
 
 将参数重定向到配置文件total.conf
 
-覆盖式命令：  ```CentriVision -hmap ? > total.conf``` 
+覆盖式命令：  ```
+CentriVision -hmap ? > total.conf
+``` 
 
-追加式命令：  ```CentriVision -hmap ? >> total.conf``` 
+追加式命令：  ```
+CentriVision -hmap ? >> total.conf
+``` 
 
 配置文件：
 
@@ -311,7 +341,9 @@ out_path 输出路径
 
 功能执行：
 
-命令： ```CentriVision -hmap total.conf```
+命令： ```
+CentriVision -hmap total.conf
+```
 
 结果
 
