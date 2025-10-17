@@ -150,6 +150,31 @@ gap = 40 重复区域连续性容错宽度 gap\*windows
 centrigff = centri gff 鉴定候选区结果  
 centrifasta = centri fasta 候选区fasta文件  
 
+lens文件：  
+```
+#染色体号\t染色体长度\t基因数
+osa2\t36447916\t6689
+```
+chip_seq文件：  
+```
+#染色体号\t起始\t终止
+osa2  13619000  14176000
+```
+
+trfgff文件：  
+```
+#染色体号\tTRF\tTandemRepeat\t起始\t终止\t-\t-\t-\t注释
+osa2  TRF TandemRepeat  1 6615        ID=TRF00001;PeriodSize=7;CopyNumber=944.9;Consensus=CCCTAAA
+osa2  TRF TandemRepeat  9594  9661        ID=TRF00002;PeriodSize=34;CopyNumber=2.0;Consensus=CTCCAAAACCATGGAGGAAGTCAAATTACACCGA
+osa2  TRF TandemRepeat  19795 19826       ID=TRF00003;PeriodSize=3;CopyNumber=10.7;Consensus=CGG
+osa2  TRF TandemRepeat  20033 20061       ID=TRF00004;PeriodSize=6;CopyNumber=5.0;Consensus=GGGGCG
+osa2  TRF TandemRepeat  22330 22433       ID=TRF00005;PeriodSize=27;CopyNumber=3.9;Consensus=TTCCCAGGAGGGATGCCTGGTGGAGGT
+osa2  TRF TandemRepeat  22326 22457       ID=TRF00006;PeriodSize=54;CopyNumber=2.5;Consensus=GGGCTTCCCAGGTGCTATGCCTGGTGGAGGTTTCCCAGGAGGAATGCCTGGT
+osa2  TRF TandemRepeat  25152 25199       ID=TRF00007;PeriodSize=24;CopyNumber=2.0;Consensus=GCATGCAAAGCAAGTAATAATAGG
+osa2  TRF TandemRepeat  25446 25500       ID=TRF00008;PeriodSize=6;CopyNumber=9.2;Consensus=ATATAG
+......
+```
+
 
 ```
 [TRF]
@@ -180,6 +205,7 @@ centrifasta = centri.fasta
 ![结果](https://github.com/user-attachments/assets/83d37692-95db-4380-b960-89230164c18a)
 鉴定结果判断
 
+---
 
 ### 着丝粒点阵图 -d
 
