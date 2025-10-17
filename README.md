@@ -9,27 +9,16 @@ I'm working hard on a clear and practical guide—stay tuned!
 Questions or ideas? Open an issue and let’s make it better together.
 
 <!-- 
-**<span style="color:blue;">蓝色加粗</span>**
-**<span style="color:green;">绿色加粗</span>**
-**<span style="color:orange;">橙色加粗</span>**
-**<span style="color:#FF00FF;">自定义紫色加粗</span>**
-<span style="color:gray;">灰色文本</span>
-***<span style="color:purple;">紫色加粗斜体文字</span>***
-
+$${\color{red}Welcome \space \color{lightblue}To \space \color{orange}Stackoverflow}$$
 -->
 
-$${\color{red}Welcome \space \color{lightblue}To \space \color{orange}Stackoverflow}$$
 
-<font face="黑体">我是黑体字</font>
-<font face="微软雅黑">我是微软雅黑</font>
-<font face="STCAIYUN">我是华文彩云</font>
-<font color=#0099ff size=7 face="黑体">color=#0099ff size=72 face="黑体"</font>
-<font color=#00ffff size=72>color=#00ffff</font>
-<font color=gray size=72>color=gray</font>
 
-**<span style="color:#FF00FF;">自定义紫色加粗</span>**  
+$${\color{green}Success!}$$
+$${\color{orange}\textbf{Warning!}}$$
+$${\color{red}\textsf{Error!}}$$
+$${\color{blue}Use \space \texttt{CentriVision -trf}}$$
 
-<span style="color:gray;">灰色文本</span>  
 
 **<span style="color:orange;">CentriVision</span>** 是一个用于研究基因组着丝粒结构的软件工具。
 ---
