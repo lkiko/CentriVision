@@ -19,6 +19,8 @@ $${\color{orange}\textbf{Warning!}}$$
 $${\color{red}\textsf{Error!}}$$
 $${\color{blue}Use \space \texttt{CentriVision -trf}}$$
 
+这是行内颜色示例：${\color{blue}blue}$
+
 
 **<span style="color:orange;">CentriVision</span>** 是一个用于研究基因组着丝粒结构的软件工具。
 ---
