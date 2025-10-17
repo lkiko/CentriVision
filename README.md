@@ -8,7 +8,14 @@ I'm working hard on a clear and practical guide—stay tuned!
 如有疑问或建议，随时提 Issue，我们一起把它打磨得更好。  
 Questions or ideas? Open an issue and let’s make it better together.
 
-CentriVision 是一个用于研究基因组着丝粒结构的软件工具。
+<!-- 
+**<span style="color:blue;">蓝色加粗</span>**
+**<span style="color:green;">绿色加粗</span>**
+**<span style="color:orange;">橙色加粗</span>**
+**<span style="color:#FF00FF;">自定义紫色加粗</span>**
+-->
+
+**<span style="color:orange;">CentriVision</span>**是一个用于研究基因组着丝粒结构的软件工具。
 ---
 
 ## 简介
