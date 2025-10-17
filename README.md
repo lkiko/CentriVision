@@ -460,6 +460,9 @@ CentriVision -hm total.conf
 ```
 ![hm-run](https://github.com/user-attachments/assets/30b08149-a273-47fe-a866-48ce43e3fbae)
 
+ialign比对结果
+![ialign](https://github.com/user-attachments/assets/abd6f57f-8c5f-460e-b713-4b5984969402)
+
 重复序列相似性热图：
 ![s02_1](https://github.com/lkiko/CentriVision/assets/57740432/d0b95ae5-d83f-4997-9410-2768ddc296bf)
 
