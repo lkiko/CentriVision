@@ -50,7 +50,7 @@ ${\color{orange}\textbf{CentriVision}}$ 旨在提供一个简单而强大的工�
   <img src="https://github.com/lkiko/CentriVision/blob/main/video/install.gif?raw=true" width="100%">
 </p>
 
-你可以使用  ${\color{green}\textbf{pip}}$ (https://pypi.org/project/CentriVision/)来安装 CentriVision：  
+你可以使用  ${\color{green}\textbf{pip}}$ (https://pypi.org/project/CentriVision/) 来安装 CentriVision：  
 ```bash
 pip install CentriVision
 ```
@@ -254,8 +254,7 @@ gap = 40
 centrigff = centri.gff
 centrifasta = centri.fasta
 ```
-功能执行：
-
+功能执行  
 命令：  
 ```bash
 CentriVision -trf total.conf
@@ -264,7 +263,7 @@ CentriVision -trf total.conf
 <p align="center">
   <img src="https://github.com/lkiko/CentriVision/blob/main/video/trf-run.gif?raw=true" width="100%">
 </p>
-输出结果:
+输出结果:  
 
 ![图示](https://github.com/user-attachments/assets/3e2e19d7-7256-4cd9-9495-047d7f29a4be)
 淡蓝色为重复序列分布图，蓝色区域为着丝粒候选区域
@@ -273,7 +272,7 @@ CentriVision -trf total.conf
 
 $${\color{red}\textbf{TRF在面对大区域重复的时候扫描特别慢，可以单独切片运行TRF注释}}$$  
 
-#### 已有注释文件时使用 -cf CENTRIFINDER 模块，输入文件兼容 ${\color{orange}\textbf{串联重复注释文件或者转座子注释文件}}$  
+#### 已有注释文件时使用 -cf CENTRIFINDER 模块，输入文件兼容 ${\color{orange}\textbf{串联重复注释文件、转座子注释文件或者回文序列注释}}$  
 
 覆盖式命令：  
 ```bash
@@ -312,6 +311,54 @@ centrigff = centri gff 鉴定候选区结果
 centrifasta = centri fasta 候选区fasta文件  
 
 运行方式同上
+命令：  
+```bash
+CentriVision -cf total.conf
+```
+
+#### 回文序列注释 -ps PALINDROMIC 模块，通过染色体 ${\color{orange}\textbf{回文序列}}$ 密度来鉴定着丝粒，注释结果输入 -cf CENTRIFINDER 模块
+
+覆盖式命令：  
+```bash
+CentriVision -ps ? > total.conf
+```
+
+追加式命令：  
+```bash
+CentriVision -ps ? >> total.conf
+```
+配置文件：  
+```
+[Palindromic]
+genome_file = genome file
+length = 10
+reach = 2000
+windows = 10000
+step = 5000
+coln = 3
+width = 15
+height = 10
+gff_file = Palindromic gff
+savefile = save file (*.png, *.pdf, *.svg)
+```
+配置文件  
+genome_file = genome file 基因组fasta文件  
+length = 10 回文序列长度  
+reach = 2000 回文最大距离  
+windows = 10000 密度窗口  
+step = 5000 密度窗口华东距离  
+coln = 3 绘图列数  
+width = 15 绘图宽度  
+height = 10 绘图高度  
+gff_file = Palindromic gff 输出gff文件  
+savefile = save file (\*.png, \*.pdf, \*.svg) 可视化输出  
+
+运行方式同上
+命令：  
+```bash
+CentriVision -ps total.conf
+```
+![ps](https://github.com/user-attachments/assets/d8917a8f-a888-49d7-ab8a-17f99b71ee47)
 
 ---
 
