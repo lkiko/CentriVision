@@ -9,26 +9,35 @@ I'm working hard on a clear and practical guide—stay tuned!
 Questions or ideas? Open an issue and let’s make it better together.
 
 <!-- 
-$${\color{red}Welcome \space \color{lightblue}To \space \color{orange}Stackoverflow}$$
+$${\color{green}Success!}$$  
+$${\color{orange}\textbf{Warning!}}$$  
+$${\color{red}\textsf{Error!}}$$  
+$${\color{blue}Use \space \texttt{CentriVision -trf}}$$  
+$${\color{red}\textbf{红色加粗}}$$  
+$${\color{orange}\textbf{橙色加粗}}$$  
+$${\color{blue}\textbf{蓝色加粗}}$$  
+$${\color{green}\textbf{绿色加粗}}$$  
+$${\color{purple}\textbf{紫色加粗}}$$  
+$${\color{red}\textbf{CentriVision}} \space {\color{blue}\textbf{Configuration}} \space {\color{green}\textbf{Completed!}}$$  
+这里是 ${\color{red}\textbf{红色加粗文字}}$ 示例  
+这是行内颜色示例： ${\color{blue}blue}$   
 -->
 
+$${\color{green}Success!}$$  
+$${\color{orange}\textbf{Warning!}}$$  
+$${\color{red}\textsf{Error!}}$$  
+$${\color{blue}Use \space \texttt{CentriVision -trf}}$$  
+$${\color{red}\textbf{红色加粗}}$$  
+$${\color{orange}\textbf{橙色加粗}}$$  
+$${\color{blue}\textbf{蓝色加粗}}$$  
+$${\color{green}\textbf{绿色加粗}}$$  
+$${\color{purple}\textbf{紫色加粗}}$$  
+$${\color{red}\textbf{CentriVision}} \space {\color{blue}\textbf{Configuration}} \space {\color{green}\textbf{Completed!}}$$  
+这里是 ${\color{red}\textbf{红色加粗文字}}$ 示例  
+这是行内颜色示例： ${\color{blue}blue}$  
 
 
-$${\color{green}Success!}$$
-$${\color{orange}\textbf{Warning!}}$$
-$${\color{red}\textsf{Error!}}$$
-$${\color{blue}Use \space \texttt{CentriVision -trf}}$$
-$${\color{red}\textbf{红色加粗}}$$
-$${\color{orange}\textbf{橙色加粗}}$$
-$${\color{blue}\textbf{蓝色加粗}}$$
-$${\color{green}\textbf{绿色加粗}}$$
-$${\color{purple}\textbf{紫色加粗}}$$
-$${\color{red}\textbf{CentriVision}} \space {\color{blue}\textbf{Configuration}} \space {\color{green}\textbf{Completed!}}$$
-这里是 ${\color{red}\textbf{红色加粗文字}}$ 示例
-这是行内颜色示例： ${\color{blue}blue}$ 
-
-
-**<span style="color:orange;">CentriVision</span>** 是一个用于研究基因组着丝粒结构的软件工具。
+${\color{orange}\textbf{CentriVision}}$ 是一个用于研究基因组着丝粒结构的软件工具。
 ---
 
 ## 简介
