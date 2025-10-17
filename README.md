@@ -50,7 +50,7 @@ ${\color{orange}\textbf{CentriVision}}$ 旨在提供一个简单而强大的工�
   <img src="https://github.com/lkiko/CentriVision/blob/main/video/install.gif?raw=true" width="100%">
 </p>
 
-你可以使用 ${\color{green}\textbf{pip(https://pypi.org/project/CentriVision/)}}$ 来安装 CentriVision：  
+你可以使用  ${\color{green}\textbf{pip}}$ (https://pypi.org/project/CentriVision/)来安装 CentriVision：  
 ```bash
 pip install CentriVision
 ```
