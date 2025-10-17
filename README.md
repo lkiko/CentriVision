@@ -24,9 +24,8 @@ $${\color{blue}\textbf{蓝色加粗}}$$
 $${\color{green}\textbf{绿色加粗}}$$
 $${\color{purple}\textbf{紫色加粗}}$$
 $${\color{red}\textbf{CentriVision}} \space {\color{blue}\textbf{Configuration}} \space {\color{green}\textbf{Completed!}}$$
-
-
-这是行内颜色示例：${\color{blue}blue}$
+这里是 ${\color{red}\textbf{红色加粗文字}}$ 示例
+这是行内颜色示例： ${\color{blue}blue}$ 
 
 
 **<span style="color:orange;">CentriVision</span>** 是一个用于研究基因组着丝粒结构的软件工具。
