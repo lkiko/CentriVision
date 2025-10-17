@@ -346,7 +346,7 @@ genome_file = genome file 基因组fasta文件
 length = 10 回文序列长度  
 reach = 2000 回文最大距离  
 windows = 10000 密度窗口  
-step = 5000 密度窗口华东距离  
+step = 5000 密度窗口滑动距离  
 coln = 3 绘图列数  
 width = 15 绘图宽度  
 height = 10 绘图高度  
@@ -359,6 +359,11 @@ savefile = save file (\*.png, \*.pdf, \*.svg) 可视化输出
 CentriVision -ps total.conf
 ```
 ![ps](https://github.com/user-attachments/assets/d8917a8f-a888-49d7-ab8a-17f99b71ee47)
+
+增加ChIP-seq先验数据(红色区域)  
+
+![ps](https://github.com/user-attachments/assets/fbe6a8f5-a0f1-421b-8318-64f9b109fe1c)
+
 
 ---
 
