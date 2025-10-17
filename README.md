@@ -390,8 +390,6 @@ CentriVision -md ? > total.conf
 CentriVision -md ? >> total.conf
 ```
 
-![md参数修改](https://github.com/user-attachments/assets/121aaaa2-f386-46f6-a6c7-6341faf6fde0)
-
 配置文件：  
 ```
 [Dotplot]
@@ -405,18 +403,15 @@ temp = False
 cpu = 16
 outfile = out dotplot
 ```
-
-genome_file = genome file 基因组fasta文件  
-lens = lens file 染色体文件  
-chip_seq = chip_seq map file or None ChIP-seq或其它数据的先验着丝粒位置文件  
-colors = hish,centri,chip or hish,centri,None or #38b48b,#1e50a2,#d7003a 颜色配置  
-trfgff = out gff TRF输出gff3结果  
-trffasta = out fasta TRF输出fasta文件  
-windows = 10000 重复序列密度窗口跨度  
-step = 5000 重复序列密度窗口滑动步长  
-gap = 40 重复区域连续性容错宽度 gap\*windows  
-centrigff = centri gff 鉴定候选区结果  
-centrifasta = centri fasta 候选区fasta文件  
+参数详解：  
+genome_file = genome file 着丝粒fasta文件  
+minlength = 10 最小重复单元  
+windows = 4000 切片大小，根据不同物种的重复单元大小，计算机内存大小等合理设置，一般保持 ${\color{orange}\textbf{20个重复单元}}$ 左右最为清晰  
+poly = False 去除序列中的单碱基重复区域，默认不开启  
+plot = False 输出单独的自相似矩阵图  
+temp = False 是否保留比对矩阵  
+cpu = 16 多进程  
+outfile = out dotplot 输出文件，包含每个切片的特征矩阵(tab隔开)  
 
 修改配置文件如下：  
 ```
@@ -431,6 +426,9 @@ temp = False
 cpu = 8
 outfile = out.dotplot
 ```
+
+![md参数修改](https://github.com/user-attachments/assets/121aaaa2-f386-46f6-a6c7-6341faf6fde0)
+
 功能执行  
 命令：  
 ```bash
@@ -444,7 +442,7 @@ CentriVision -md total.conf
 查找重复单元的相位纠正图
 ![chr02_1_s98](https://github.com/lkiko/CentriVision/assets/57740432/0de54b96-94bd-4c05-a60a-b60e64dd8020)
 
-$${\color{red}\textbf{TRF在面对大区域重复的时候扫描特别慢，可以单独切片运行TRF注释}}$$  
+$${\color{red}\textbf{切片大小与分辨率和计算机内存挂钩，大型矩阵极其消耗内存；对于具有超大着丝粒的物种，切片数量非常多，是否需要输出所有自相似矩阵图以及比对矩阵需要适当选择，可利用输出文件可选的生成对应切片的自相似矩阵图和比对矩阵}}$$  
 
 
 
