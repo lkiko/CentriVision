@@ -126,6 +126,14 @@ which mpirun
 ```bash
 CentriVision -h
 ```
+```bash
+CentriVision options ?/xx.conf
+```
+运行命令参数解释  
+${\color{red}\textbf{?}}$ 表示询问模块参数  
+${\color{red}\textbf{xx.conf}}$ 配置文件内是模块需要的参数  
+${\color{red}\textbf{? > xx.conf}}$ 询问模块参数并将输出的内容覆盖式输入到后续的xx.conf配置文件中  
+${\color{red}\textbf{? >> xx.conf}}$ 询问模块参数并将输出的内容追加输入到后续的xx.conf配置文件中  
 
 ```
 usage: CentriVision [options]
@@ -267,11 +275,10 @@ CentriVision -trf total.conf
 淡蓝色为重复序列分布图，蓝色区域为着丝粒候选区域
 
 ![结果](https://github.com/user-attachments/assets/83d37692-95db-4380-b960-89230164c18a)
-鉴定结果判断
 
-TRF在面对大区域重复的时候扫描特别慢，可以单独切片运行TRF注释  
+$${\color{red}\textbf{TRF在面对大区域重复的时候扫描特别慢，可以单独切片运行TRF注释}}$$  
 
-#### 已有注释文件时使用 -cf CENTRIFINDER 模块，输入文件包括 ${\color{orange}\textbf{串联重复注释文件或者转座子注释文件}}$  
+#### 已有注释文件时使用 -cf CENTRIFINDER 模块，输入文件兼容 ${\color{orange}\textbf{串联重复注释文件或者转座子注释文件}}$  
 
 覆盖式命令：  
 ```bash
@@ -309,7 +316,7 @@ gap = 40 重复区域连续性容错宽度 gap\*windows
 centrigff = centri gff 鉴定候选区结果  
 centrifasta = centri fasta 候选区fasta文件  
 
-
+运行方式同上
 
 ---
 
