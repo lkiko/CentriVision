@@ -415,14 +415,14 @@ split = 1000
 segment_length = 0
 out_path = out path
 ```
-参数详解：  
+参数详解 ${\color{orange}\textbf{可中断接续运行}}$ ：  
 centromere_file = genome file 着丝粒文件  
-align_software = ialign/muscle/mafft/hamming 比对软件，可以调用现有软件，也可以使用ialign c模块快速比对  
+align_software = ialign/muscle/mafft/hamming 比对软件，可以调用现有软件，也可以使用 ${\color{orange}\textbf{ialign}}$ c模块快速比对  
 model = global/local 比对模式，global考虑全局相似性，全部序列同时比对；local序列两两比对  
-reverse_complement = True/False 负值表示反向互补/反向  
-color_mode = Discrete/Gradient 软件支持离散着色和渐变着色 Discrete or Gradient  
+reverse_complement = True/False 负值表示 ${\color{orange}\textbf{反向互补/反向}}$  
+color_mode = Discrete/Gradient 软件支持 ${\color{orange}\textbf{离散着色/渐变着色}}$  Discrete or Gradient  
 annotation = True/False 选择是否需要绘制注释信息，GC,TRF,TE  
-trf_gff = None or gff:#e2041b None表示无注释，若有注释则使用:分割文件名和展示颜色  
+trf_gff = None or gff:#e2041b ${\color{orange}\textbf{None}}$ 表示无注释，若有注释则使用 ${\color{orange}\textbf{:}}$ 分割文件名和展示颜色  
 te_gff = None or gff:#19448e  
 gene_gff = None or gff:#b44c97  
 chip_file = None or txt:#3eb370  
@@ -459,11 +459,10 @@ out_path = hmap
 CentriVision -hm total.conf
 ```
 
-结果：  
 重复序列相似性热图：
 ![s02_1](https://github.com/lkiko/CentriVision/assets/57740432/d0b95ae5-d83f-4997-9410-2768ddc296bf)
 
-${\color{red}\textbf{切片大小}}$ 与分辨率和计算机内存大小挂钩，大型矩阵极其消耗内存；对于具有${\color{red}\textbf{超大着丝粒}}$ 的物种，切片数量非常多，是否需要输出所有自相似矩阵图以及比对矩阵需要适当选择，可利用输出文件可选的生成对应切片的自相似矩阵图和比对矩阵
+${\color{red}\textbf{切片大小}}$ 与分辨率和计算机内存大小挂钩  
 
 ---
 
