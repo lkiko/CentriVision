@@ -76,22 +76,19 @@ conda activate centrivision_env
 
 
 ---
-## 配置：
-
-**以下以 ubuntu操作系统 用户名为charles 的miniconda3 python3.13环境为例**
+## 配置：  
+**以下以 ubuntu操作系统 用户名为charles 的miniconda3 python3.13环境为例**  
 
 <p align="center">
   <img src="https://github.com/lkiko/CentriVision/blob/main/video/configuration.gif?raw=true" width="100%">
 </p>
 
-默认安装路径：
-
+默认安装路径：  
 ```bash
 /home/charles/miniconda3/lib/python3.13/site-packages/CentriVision/
 ```
 
-查看依赖文件：
-
+查看依赖文件：  
 ```bash
 cat /home/charles/miniconda3/lib/python3.13/site-packages/CentriVision/conf.ini
 ```
@@ -124,7 +121,7 @@ which mpirun
 
 ---
 
-## 使用
+## 使用方法
 命令：  
 ```bash
 CentriVision -h
@@ -159,7 +156,8 @@ options:
 
 ```
 ***
-### 着丝粒鉴定 -trf
+### 着丝粒鉴定 -trf ${\color{orange}\textbf{TRF(Tandem Repeat Finder)}}$  
+调用TRF(Tandem Repeat Finder)扫描重复序列，根据重复序列判断着丝粒，也可以输入现有的重复注释gff3文件，同时适用于 ${\color{orange}\textbf{串联重复类型和转座子类型}}$ 的着丝粒。  
 <p align="center">
   <img src="https://github.com/lkiko/CentriVision/blob/main/video/trf.gif?raw=true" width="100%">
 </p>
