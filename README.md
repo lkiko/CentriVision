@@ -427,7 +427,7 @@ te_gff = None or gff:#19448e
 gene_gff = None or gff:#b44c97  
 chip_file = None or txt:#3eb370  
 gcc = #0d0015 GC含量展示颜色  
-split = 1000 确保着丝粒拆分的不能太短，协调计算机的内存、算力和着丝粒长度/global模式下，是最短着丝粒的切割份数，local模式下，是每条着丝粒单独拆分  
+split = 1000 着丝粒拆分的不能太短，协调计算机的内存、算力和着丝粒长度/global模式下，是最短着丝粒的切割份数，local模式下，是每条着丝粒单独拆分  
 segment_length = 0 segment_length为0时split生效，若segment_length不为零为拆分长度  
 out_path = out path 输出路径  
 
@@ -458,12 +458,128 @@ out_path = hmap
 ```bash
 CentriVision -hm total.conf
 ```
+![hm-run](https://github.com/user-attachments/assets/30b08149-a273-47fe-a866-48ce43e3fbae)
 
 重复序列相似性热图：
 ![s02_1](https://github.com/lkiko/CentriVision/assets/57740432/d0b95ae5-d83f-4997-9410-2768ddc296bf)
 
 ${\color{red}\textbf{切片大小}}$ 与分辨率和计算机内存大小挂钩  
 
+---
+
+### 快速比对 -e EDISTALN ${\color{orange}\textbf{整体点图比对}}$  
+拆分着丝粒并扫描重复序列。  
+
+查看参数：  
+```bash
+CentriVision -e ?
+```
+
+参数重定向到配置文件total.conf
+
+覆盖式命令：  
+```bash
+CentriVision -e ? > total.conf
+```
+
+追加式命令：  
+```bash
+CentriVision -e ? >> total.conf
+```
+
+配置文件：  
+```
+[EdistAln]
+centri_sequence = centri file
+window = 2000
+cpu = 8
+out_file = out file (\*.tsv)
+```
+参数详解：  
+centri_sequence = centri file  
+window = 2000  
+cpu = 8  
+out_file = out file (\*.tsv)  
+
+功能执行  
+命令：  
+```bash
+CentriVision -e total.conf
+```
+---
+
+
+### 快速比对 -ed EDISTDOT ${\color{orange}\textbf{整体点图}}$  
+拆分着丝粒并扫描重复序列。  
+
+查看参数：  
+```bash
+CentriVision -ed ?
+```
+
+参数重定向到配置文件total.conf
+
+覆盖式命令：  
+```bash
+CentriVision -ed ? > total.conf
+```
+
+追加式命令：  
+```bash
+CentriVision -ed ? >> total.conf
+```
+
+配置文件：  
+```
+[EdistDot]
+genepairs = colinearity file
+genepairsfile_type = EdistAln/BLAST/MCScanX/ColinearScan
+gff1 =  gff1 file
+gff2 =  gff2 file
+lens1 = lens1 file
+lens2 = lens2 file
+genome1_name =  Genome1 name
+genome2_name =  Genome2 name
+position = order
+blast_reverse = false
+block = 0
+markersize = 0.5
+figsize = 10,10
+savefig = savefile(.png, .pdf, .svg)
+
+# 其他参数
+genome_name_size = 30
+chr_name_size = 20
+tandem = True
+levels = 1:1:0
+q_s = 1:1
+```
+参数详解：  
+genepairs = colinearity file  
+genepairsfile_type = EdistAln/BLAST/MCScanX/ColinearScan  
+gff1 =  gff1 file  
+gff2 =  gff2 file  
+lens1 = lens1 file  
+lens2 = lens2 file  
+genome1_name =  Genome1 name  
+genome2_name =  Genome2 name  
+position = order  
+blast_reverse = false  
+block = 0  
+markersize = 0.5  
+figsize = 10,10  
+savefig = savefile(.png, .pdf, .svg)  
+genome_name_size = 30  
+chr_name_size = 20  
+tandem = True  
+levels = 1:1:0  
+q_s = 1:1  
+
+功能执行  
+命令：  
+```bash
+CentriVision -ed total.conf
+```
 ---
 
 ### 重复模式 -md DOTPLOT ${\color{orange}\textbf{分块点图}}$  
@@ -541,6 +657,538 @@ CentriVision -md total.conf
 查找重复单元的相位纠正图
 ![chr02_1_s98](https://github.com/lkiko/CentriVision/assets/57740432/0de54b96-94bd-4c05-a60a-b60e64dd8020)
 
-${\color{red}\textbf{切片大小}}$ 与分辨率和计算机内存大小挂钩，大型矩阵极其消耗内存；对于具有${\color{red}\textbf{超大着丝粒}}$ 的物种，切片数量非常多，是否需要输出所有自相似矩阵图以及比对矩阵需要适当选择，可利用输出文件可选的生成对应切片的自相似矩阵图和比对矩阵
+${\color{red}\textbf{切片大小}}$ 与分辨率和计算机内存大小挂钩，大型矩阵极其消耗内存；对于具有 ${\color{red}\textbf{超大着丝粒}}$ 的物种，切片数量非常多，是否需要输出所有自相似矩阵图以及比对矩阵需要适当选择，可利用输出文件可选的生成对应切片的自相似矩阵图和比对矩阵
+
+### 统计 -c COUNT_FILE ${\color{orange}\textbf{统计}}$  
+拆分着丝粒并扫描重复序列。  
+
+查看参数：  
+```bash
+CentriVision -c ?
+```
+
+参数重定向到配置文件total.conf
+
+覆盖式命令：  
+```bash
+CentriVision -c ? > total.conf
+```
+
+追加式命令：  
+```bash
+CentriVision -c ? >> total.conf
+```
+
+配置文件：  
+```
+[Count_file]
+dot_file = dotplot file
+# 计入统计的重复单元长度范围
+lmmin = 8
+lmmax = 1000
+# 分箱宽度
+bin_size = 10
+# 关注前几个柱体
+peak_index = 1
+# 关注其它柱体
+peak_indices = None or Other bars example: 1,2,3
+# y_break_min不为0时绘制断轴图，设置省略范围
+y_break_min = 0
+y_break_max = 0
+out_file = new dotplot file
+savefile = save file (\*.png, \*.pdf, \*.svg)
+```
+参数详解：  
+dot_file = dotplot file  
+# 计入统计的重复单元长度范围  
+lmmin = 8  
+lmmax = 1000  
+# 分箱宽度  
+bin_size = 10  
+# 关注前几个柱体  
+peak_index = 1  
+# 关注其它柱体  
+peak_indices = None or Other bars example: 1,2,3  
+# y_break_min不为0时绘制断轴图，设置省略范围  
+y_break_min = 0  
+y_break_max = 0  
+out_file = new dotplot file  
+savefile = save file (\*.png, \*.pdf, \*.svg)  
+
+功能执行  
+命令：  
+```bash
+CentriVision -c total.conf
+```
+---
+
+
+### 快速比对 -m MONOMER ${\color{orange}\textbf{整体点图比对}}$  
+拆分着丝粒并扫描重复序列。  
+
+查看参数：  
+```bash
+CentriVision -m ?
+```
+
+参数重定向到配置文件total.conf
+
+覆盖式命令：  
+```bash
+CentriVision -m ? > total.conf
+```
+
+追加式命令：  
+```bash
+CentriVision -m ? >> total.conf
+```
+
+配置文件：  
+```
+# 单体扫描
+[Monomer]
+centri_sequence = centri file
+seed = 320
+window = 20
+```
+参数详解：  
+centri_sequence = centri file  
+seed = 320  
+window = 20  
+
+功能执行  
+命令：  
+```bash
+CentriVision -m total.conf
+```
+---
+
+### 快速比对 -s SEQSIGIL ${\color{orange}\textbf{整体点图比对}}$  
+拆分着丝粒并扫描重复序列。  
+
+查看参数：  
+```bash
+CentriVision -s ?
+```
+
+参数重定向到配置文件total.conf
+
+覆盖式命令：  
+```bash
+CentriVision -s ? > total.conf
+```
+
+追加式命令：  
+```bash
+CentriVision -s ? >> total.conf
+```
+
+配置文件：  
+```
+[SeqSigil]
+monomer_seq = monomer file
+align_software = muscle or mafft or clustalw or clustalo
+missing_threshold = 0.5
+split_position = 150
+savefig = savefile(.png, .pdf, .svg)
+
+# 可调参数：标题和坐标轴字体大小
+title_fontsize = 20
+axis_fontsize = 18
+```
+参数详解：  
+monomer_seq = monomer file  
+align_software = muscle or mafft or clustalw or clustalo  
+missing_threshold = 0.5  
+split_position = 150  
+savefig = savefile(.png, .pdf, .svg)  
+
+# 可调参数：标题和坐标轴字体大小  
+title_fontsize = 20  
+axis_fontsize = 18  
+
+功能执行  
+命令：  
+```bash
+CentriVision -s total.conf
+```
+---
+
+### 快速比对 -ic IC_SIGNIFICANCE ${\color{orange}\textbf{整体点图比对}}$  
+拆分着丝粒并扫描重复序列。  
+
+查看参数：  
+```bash
+CentriVision -ic ?
+```
+
+参数重定向到配置文件total.conf
+
+覆盖式命令：  
+```bash
+CentriVision -ic ? > total.conf
+```
+
+追加式命令：  
+```bash
+CentriVision -ic ? >> total.conf
+```
+
+配置文件：  
+```
+[Ic_Significance]
+ic_dir = IC file idr
+pattern = *.tsv
+min_window = 10
+max_window = 10
+step = 1
+# 背景选择：within 使用同序列其余位点；global 使用全体位点作为背景（默认 within）
+background = within
+# 多重检验校正方法（statsmodels 支持的方法），默认 fdr_bh
+# bonferroni：Bonferroni 校正
+# sidak：Sidak 校正
+# holm-sidak：Holm-Sidak 校正
+# holm：Holm 校正
+# simes-hochberg：Simes-Hochberg 校正
+# hommel：Hommel 校正
+# fdr_bh：Benjamini-Hochberg FDR 校正（默认）
+# fdr_by：Benjamini-Yekutieli FDR 校正
+# fdr_tsbh：Two-stage Benjamini-Hochberg FDR 校正
+# fdr_tsbky：Two-stage Benjamini-Krieger-Yekutieli FDR 校正
+correction = fdr_bh
+```
+参数详解：  
+ic_dir = IC file idr  
+pattern = *.tsv  
+min_window = 10  
+max_window = 10  
+step = 1  
+# 背景选择：within 使用同序列其余位点；global 使用全体位点作为背景（默认 within）  
+background = within  
+# 多重检验校正方法（statsmodels 支持的方法），默认 fdr_bh  
+# bonferroni：Bonferroni 校正  
+# sidak：Sidak 校正  
+# holm-sidak：Holm-Sidak 校正  
+# holm：Holm 校正  
+# simes-hochberg：Simes-Hochberg 校正  
+# hommel：Hommel 校正  
+# fdr_bh：Benjamini-Hochberg FDR 校正（默认）  
+# fdr_by：Benjamini-Yekutieli FDR 校正  
+# fdr_tsbh：Two-stage Benjamini-Hochberg FDR 校正  
+# fdr_tsbky：Two-stage Benjamini-Krieger-Yekutieli FDR 校正  
+correction = fdr_bh  
+
+功能执行  
+命令：  
+```bash
+CentriVision -ic total.conf
+```
+---
+
+### 快速比对 -sa SATAGE ${\color{orange}\textbf{整体点图比对}}$  
+拆分着丝粒并扫描重复序列。  
+
+查看参数：  
+```bash
+CentriVision -sa ?
+```
+
+参数重定向到配置文件total.conf
+
+覆盖式命令：  
+```bash
+CentriVision -sa ? > total.conf
+```
+
+追加式命令：  
+```bash
+CentriVision -sa ? >> total.conf
+```
+
+配置文件：  
+```
+[SatAge]
+genome_fa = centromere fasta
+blast = True
+monomers_fa = monomer fasta
+blast_output = blast_results.tsv
+blast_hits_file = monomer_blast_hits.png
+age = True
+monomer_age_file = monomer_age.tsv
+age_plot_file = monomer_age.png
+# monomer 环境窗口
+window_size = 10000
+# kmer 长度
+k = 5
+
+# 可调参数：标题和坐标轴字体大小
+distance_threshold = 0.6
+chrom_label = 20
+xlabel = 18
+xtick = 16
+colorbar_label = 18
+legend_fontsize = 18
+discrete_colormap = False
+n_bins = 8
+mismatches = 5
+```
+参数详解：  
+genome_fa = centromere fasta  
+blast = True  
+monomers_fa = monomer fasta  
+blast_output = blast_results.tsv  
+blast_hits_file = monomer_blast_hits.png  
+age = True  
+monomer_age_file = monomer_age.tsv  
+age_plot_file = monomer_age.png  
+# monomer 环境窗口  
+window_size = 10000  
+# kmer 长度  
+k = 5  
+
+# 可调参数：标题和坐标轴字体大小  
+distance_threshold = 0.6  
+chrom_label = 20  
+xlabel = 18  
+xtick = 16  
+colorbar_label = 18  
+legend_fontsize = 18  
+discrete_colormap = False  
+n_bins = 8  
+mismatches = 5  
+
+功能执行  
+命令：  
+```bash
+CentriVision -sa total.conf
+```
+---
+
+### 快速比对 -cd COMMUNITY_DETECTION ${\color{orange}\textbf{整体点图比对}}$  
+拆分着丝粒并扫描重复序列。  
+
+查看参数：  
+```bash
+CentriVision -cd ?
+```
+
+参数重定向到配置文件total.conf
+
+覆盖式命令：  
+```bash
+CentriVision -cd ? > total.conf
+```
+
+追加式命令：  
+```bash
+CentriVision -cd ? >> total.conf
+```
+
+配置文件：  
+```
+[Community_detection]
+fasta_file = fatsa file
+gap = 10
+identity = 75
+alignment = 75
+out_file = out community
+```
+参数详解：  
+fasta_file = fatsa file  
+gap = 10  
+identity = 75  
+alignment = 75  
+out_file = out community  
+
+功能执行  
+命令：  
+```bash
+CentriVision -cd total.conf
+```
+---
+
+### 快速比对 -cm REPEAT_COMMUNITY_MAP ${\color{orange}\textbf{整体点图比对}}$  
+拆分着丝粒并扫描重复序列。  
+
+查看参数：  
+```bash
+CentriVision -cm ?
+```
+
+参数重定向到配置文件total.conf
+
+覆盖式命令：  
+```bash
+CentriVision -cm ? > total.conf
+```
+
+追加式命令：  
+```bash
+CentriVision -cm ? >> total.conf
+```
+
+配置文件：  
+```
+[Repeat_community_map]
+community_file = community file
+lens = lens file
+repeat_gff = CentriVision repeat gff
+focus_areas = areas_file1,areas_file2 or None
+focus_name = areas_name1:red,areas_name2:green or None
+model = global or local
+top = 10
+windows = 50000
+step = 5000
+savefile = save file (\*.png, \*.pdf, \*.svg)
+```
+参数详解：  
+community_file = community file  
+lens = lens file  
+repeat_gff = CentriVision repeat gff  
+focus_areas = areas_file1,areas_file2 or None  
+focus_name = areas_name1:red,areas_name2:green or None  
+model = global or local  
+top = 10  
+windows = 50000  
+step = 5000  
+savefile = save file (\*.png, \*.pdf, \*.svg)  
+
+功能执行  
+命令：  
+```bash
+CentriVision -cm total.conf
+```
+---
+
+### 快速比对 -gc GET_CENTRI ${\color{orange}\textbf{整体点图比对}}$  
+拆分着丝粒并扫描重复序列。  
+
+查看参数：  
+```bash
+CentriVision -gc ?
+```
+
+参数重定向到配置文件total.conf
+
+覆盖式命令：  
+```bash
+CentriVision -gc ? > total.conf
+```
+
+追加式命令：  
+```bash
+CentriVision -gc ? >> total.conf
+```
+
+配置文件：  
+```
+[Get_centri]
+genome_file = genome file
+# 确保着丝粒gff中的染色体和基因组染色体一致
+gff_file = centri gff
+out_fasta = out fasta
+```
+参数详解：  
+genome_file = genome file  
+# 确保着丝粒gff中的染色体和基因组染色体一致  
+gff_file = centri gff  
+out_fasta = out fasta  
+
+功能执行  
+命令：  
+```bash
+CentriVision -gc total.conf
+```
+---
+
+### 快速比对 -gf GET_CENTGFF ${\color{orange}\textbf{整体点图比对}}$  
+拆分着丝粒并扫描重复序列。  
+
+查看参数：  
+```bash
+CentriVision -gf ?
+```
+
+参数重定向到配置文件total.conf
+
+覆盖式命令：  
+```bash
+CentriVision -gf ? > total.conf
+```
+
+追加式命令：  
+```bash
+CentriVision -gf ? >> total.conf
+```
+
+配置文件：  
+```
+[Get_centgff]
+centromere_file = centri file
+gff_file = genome gff
+start = 3
+end = 4
+locmin = 9
+output_file = centri gff
+```
+参数详解：  
+centromere_file = centri file  
+gff_file = genome gff  
+start = 3  
+end = 4  
+locmin = 9  
+output_file = centri gff  
+
+功能执行  
+命令：  
+```bash
+CentriVision -gf total.conf
+```
+---
+
+### 快速比对 -gr GET_REPEAT ${\color{orange}\textbf{整体点图比对}}$  
+拆分着丝粒并扫描重复序列。  
+
+查看参数：  
+```bash
+CentriVision -gr ?
+```
+
+参数重定向到配置文件total.conf
+
+覆盖式命令：  
+```bash
+CentriVision -gr ? > total.conf
+```
+
+追加式命令：  
+```bash
+CentriVision -gr ? >> total.conf
+```
+
+配置文件：  
+```
+[Get_repeat]
+genome = genome file
+repeat_gff3 = repeat file
+idtag = ID
+classtag = Classification
+out_path = out path
+```
+参数详解：  
+genome = genome file  
+repeat_gff3 = repeat file  
+idtag = ID  
+classtag = Classification  
+out_path = out path  
+
+功能执行  
+命令：  
+```bash
+CentriVision -gr total.conf
+```
+---
+
+
 
 ***
