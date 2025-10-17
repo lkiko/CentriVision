@@ -152,18 +152,18 @@ centrifasta = centri fasta 候选区fasta文件
 
 lens文件：  
 ```
-#染色体号\t染色体长度\t基因数
-osa2\t36447916\t6689
+#染色体号 染色体长度 基因数
+osa2  36447916  6689
 ```
 chip_seq文件：  
 ```
-#染色体号\t起始\t终止
+#染色体号 起始  终止
 osa2  13619000  14176000
 ```
 
 trfgff文件：  
 ```
-#染色体号\tTRF\tTandemRepeat\t起始\t终止\t-\t-\t-\t注释
+#染色体号 TRF TandemRepeat  起始  终止  - - - 注释
 osa2  TRF TandemRepeat  1 6615        ID=TRF00001;PeriodSize=7;CopyNumber=944.9;Consensus=CCCTAAA
 osa2  TRF TandemRepeat  9594  9661        ID=TRF00002;PeriodSize=34;CopyNumber=2.0;Consensus=CTCCAAAACCATGGAGGAAGTCAAATTACACCGA
 osa2  TRF TandemRepeat  19795 19826       ID=TRF00003;PeriodSize=3;CopyNumber=10.7;Consensus=CGG
