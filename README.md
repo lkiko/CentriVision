@@ -107,11 +107,17 @@ options:
 <p align="center">
   <img src="https://github.com/lkiko/CentriVision/blob/main/video/trf.gif?raw=true" width="100%">
 </p>
+
 查看参数：`CentriVision -trf ?`
+
 参数重定向到配置文件total.conf
+
 覆盖式命令：  `CentriVision -trf ? > total.conf`
+
 追加式命令：  `CentriVision -trf ? >> total.conf`
+
 配置文件：
+
 ```
 [TRF]
 genome_file = genome file
