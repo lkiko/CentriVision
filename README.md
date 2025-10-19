@@ -475,7 +475,7 @@ ${\color{orange}\textbf{汉明距离}}$ （速度最快，但是准确性太差�
 运行时长 ${\color{orange}\textbf{118}}$ 秒  
 ![汉明距离](https://github.com/user-attachments/assets/6582650e-196e-4575-85e6-560c17ca2d6c)  
 
-${\color{orange}\textbf{C语言脚本}}$ （速度快，准确率也不错）  
+${\color{orange}\textbf{C语言脚本}}$ （速度快，准确率也不错） ${\color{red}\textbf{推荐使用ialign}}$  
 ![ialign时间](https://github.com/user-attachments/assets/f505a2e9-c1f1-4a13-a441-01fefa0af36c)  
 运行时长${\color{orange}\textbf{2626}}$ 秒（${\color{orange}\textbf{43}}$ 分钟）  
 ![ialign结果](https://github.com/user-attachments/assets/5c04c2d1-0b2e-47ba-8ae2-a246d37d0815)  
@@ -485,7 +485,9 @@ ${\color{orange}\textbf{C语言脚本}}$ （速度快，准确率也不错）
 运行时长${\color{orange}\textbf{69619}}$ 秒（${\color{orange}\textbf{19}}$ 小时）  
 ![mafft](https://github.com/user-attachments/assets/275b1e3d-c4ff-432c-ab18-2a3e487d4f08)  
 
-![muscle](https://github.com/user-attachments/assets/171561ba-a06d-4d28-9529-3a59b970903e)  
+调用 ${\color{orange}\textbf{muscle}}$ （速度比mafft快，比ialign慢，对精确度没有ialign和mafft好） 
+![muscle时间](https://github.com/user-attachments/assets/171561ba-a06d-4d28-9529-3a59b970903e)  
+运行时长${\color{orange}\textbf{8867}}$ 秒（${\color{orange}\textbf{147}}$ 分钟） 
 ![muscle](https://github.com/user-attachments/assets/daee0171-ee6b-4dc4-9d10-c38ab85ead1c)  
 
 
