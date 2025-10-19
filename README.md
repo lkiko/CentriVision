@@ -470,7 +470,7 @@ ${\color{red}\textbf{切片大小}}$ 与分辨率和计算机内存大小挂钩
 
 #### 测试样本 osa2着丝粒   ${\color{orange}\textbf{585000bp}}$  
 拆分为 ${\color{orange}\textbf{1000}}$ 份，需要将1000份子序列进行两两比对，平台 ${\color{orange}\textbf{Intel(R) Core(TM) i7-8565U CPU @ 1.80GHz 8进程}}$ 运算  
-${\color{orange}\textbf{汉明距离}}$ （速度最快，但是准确性太差）  
+${\color{orange}\textbf{汉明距离}}$ （速度最快，但是准确性太差，主要问题是对于低相似性序列之间效果太差）  
 ![汉明距离时间](https://github.com/user-attachments/assets/cd55c48d-3b6f-46a8-ad52-b635ef6504a2)  
 运行时长 ${\color{orange}\textbf{118}}$ 秒  
 ![汉明距离](https://github.com/user-attachments/assets/6582650e-196e-4575-85e6-560c17ca2d6c)  
