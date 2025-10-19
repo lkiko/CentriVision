@@ -485,6 +485,8 @@ ${\color{orange}\textbf{C语言脚本}}$ （速度快，准确率也不错）
 运行时长${\color{orange}\textbf{69619}}$ 秒（${\color{orange}\textbf{19}}$ 小时）  
 ![mafft](https://github.com/user-attachments/assets/275b1e3d-c4ff-432c-ab18-2a3e487d4f08)  
 
+![muscle](https://github.com/user-attachments/assets/171561ba-a06d-4d28-9529-3a59b970903e)  
+![muscle](https://github.com/user-attachments/assets/daee0171-ee6b-4dc4-9d10-c38ab85ead1c)  
 
 
 ---
