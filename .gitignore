@@ -7,10 +7,26 @@ data/
 doc/
 ref/
 test_old/
-
-
-
-
+mybuild.txt
+video/trf-run.mp4
+video/trf.mp4
+video/tra.py
+CentriVision/example_data/hmap/
+CentriVision/example_data/hmap_hamming/
+CentriVision/example_data/hmap_ialign/
+CentriVision/example_data/hmap_mafft/
+CentriVision/example_data/hmap_temp/
+CentriVision/example_data/total-hamming.conf
+CentriVision/example_data/total-i.conf
+CentriVision/example_data/total-mafft.conf
+CentriVision/example_data/total-muscle.conf
+CentriVision/example_data/Palindromic.gff
+CentriVision/example_data/TRF/
+CentriVision/example_data/centri.fasta
+CentriVision/example_data/centri.gff
+CentriVision/example_data/out.fasta
+CentriVision/example_data/out.gff
+CentriVision/example_data/total.conf
 
 
 
