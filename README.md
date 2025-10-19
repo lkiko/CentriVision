@@ -468,22 +468,22 @@ ialign比对结果
 
 ${\color{red}\textbf{切片大小}}$ 与分辨率和计算机内存大小挂钩  
 
-测试样本 osa2着丝粒   585000bp
-拆分为1000份，需要将1000份子序列进行两两比对，平台Intel(R) Core(TM) i7-8565U CPU @ 1.80GHz 8进程运算
-汉明距离（速度最快，但是准确性太差）
-![汉明距离时间](https://github.com/user-attachments/assets/cd55c48d-3b6f-46a8-ad52-b635ef6504a2)
-运行时长118秒
-![汉明距离](https://github.com/user-attachments/assets/6582650e-196e-4575-85e6-560c17ca2d6c)
+测试样本 osa2着丝粒   ${\color{orange}\textbf{585000bp}}$  
+拆分为 ${\color{orange}\textbf{1000}}$ 份，需要将1000份子序列进行两两比对，平台 ${\color{orange}\textbf{Intel(R) Core(TM) i7-8565U CPU @ 1.80GHz 8进程}}$ 运算  
+${\color{orange}\textbf{汉明距离}}$ （速度最快，但是准确性太差）  
+![汉明距离时间](https://github.com/user-attachments/assets/cd55c48d-3b6f-46a8-ad52-b635ef6504a2)  
+运行时长 ${\color{orange}\textbf{118}}$ 秒  
+![汉明距离](https://github.com/user-attachments/assets/6582650e-196e-4575-85e6-560c17ca2d6c)  
 
-C语言脚本（速度快，准确率也不错）
-![ialign时间](https://github.com/user-attachments/assets/f505a2e9-c1f1-4a13-a441-01fefa0af36c)
-运行时长2626秒（43分钟）
-![ialign结果](https://github.com/user-attachments/assets/5c04c2d1-0b2e-47ba-8ae2-a246d37d0815)
+${\color{orange}\textbf{C语言脚本}}$ （速度快，准确率也不错）  
+![ialign时间](https://github.com/user-attachments/assets/f505a2e9-c1f1-4a13-a441-01fefa0af36c)  
+运行时长${\color{orange}\textbf{2626}}$ 秒（${\color{orange}\textbf{43}}$ 分钟）  
+![ialign结果](https://github.com/user-attachments/assets/5c04c2d1-0b2e-47ba-8ae2-a246d37d0815)  
 
-调用mafft（速度慢）
-![mafft时间](https://github.com/user-attachments/assets/962d4dcf-a978-4ac7-853a-259e26fee501)
-运行时长69619秒（19小时）
-![mafft](https://github.com/user-attachments/assets/275b1e3d-c4ff-432c-ab18-2a3e487d4f08)
+调用 ${\color{orange}\textbf{mafft}}$ （速度慢）  
+![mafft时间](https://github.com/user-attachments/assets/962d4dcf-a978-4ac7-853a-259e26fee501)  
+运行时长${\color{orange}\textbf{69619}}$ 秒（${\color{orange}\textbf{19}}$ 小时）  
+![mafft](https://github.com/user-attachments/assets/275b1e3d-c4ff-432c-ab18-2a3e487d4f08)  
 
 
 
