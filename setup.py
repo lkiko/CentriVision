@@ -5,7 +5,7 @@ from setuptools import find_packages, setup
 with open("README.md", "r", encoding='utf-8') as fh:
     long_description = fh.read()
 
-required = ['pandas', 'numpy', 'biopython', 'matplotlib', 'scipy','interval','seaborn','tqdm','pysam','logomaker','python-Levenshtein']
+required = ['pandas', 'numpy', 'biopython', 'matplotlib', 'scipy','interval','seaborn','tqdm','pysam','logomaker','python-Levenshtein','statsmodels','scikit-learn']
 
 setup(
     name="CentriVision",
