@@ -132,6 +132,12 @@ sudo apt install -y ncbi-blast+
 sudo apt install -y bowtie2
 
 ```
+
+更新命令：  
+```
+pip install --upgrade CentriVision
+```
+
 ---
 
 ## 使用方法
