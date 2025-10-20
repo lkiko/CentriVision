@@ -116,7 +116,7 @@ bowtie2_path = /usr/bin/
 ```bash
 which mafft
 which bowtie2
-which mpirun
+which blastn
 ......
 ```
 ubuntu安装命令  
