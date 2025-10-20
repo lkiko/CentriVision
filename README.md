@@ -117,8 +117,20 @@ bowtie2_path = /usr/bin/
 which mafft
 which bowtie2
 which mpirun
+......
 ```
+ubuntu安装命令  
 
+```
+sudo apt update
+sudo apt install -y mafft
+sudo apt install -y muscle
+sudo apt install -y clustalw
+sudo apt install -y clustalo
+sudo apt install -y ncbi-blast+
+sudo apt install -y bowtie2
+
+```
 ---
 
 ## 使用方法
