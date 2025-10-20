@@ -123,6 +123,7 @@ ubuntu安装命令
 
 ```
 sudo apt update
+sudo apt install -y trf
 sudo apt install -y mafft
 sudo apt install -y muscle
 sudo apt install -y clustalw
