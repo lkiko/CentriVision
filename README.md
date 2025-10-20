@@ -114,6 +114,7 @@ bowtie2_path = /usr/bin/
 使用vim或其它编辑器修改对应依赖软件位置TRF\Mafft\Muscle 并保存  
 路径查询  
 ```bash
+which trf
 which mafft
 which bowtie2
 which blastn
