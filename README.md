@@ -78,6 +78,11 @@ conda activate centrivision_env
   <img src="https://github.com/lkiko/CentriVision/blob/main/video/configuration.gif?raw=true" width="100%">
 </p>
 
+查找安装路径：  
+```bash
+pip uninstall CentriVision
+```
+
 默认安装路径：  
 ```bash
 /home/charles/miniconda3/lib/python3.13/site-packages/CentriVision/
