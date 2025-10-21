@@ -21,7 +21,7 @@ $${\color{purple}\textbf{紫色加粗}}$$
 $${\color{red}\textbf{CentriVision}} \space {\color{blue}\textbf{Configuration}} \space {\color{green}\textbf{Completed!}}$$  
 这里是 ${\color{red}\textbf{红色加粗文字}}$ 示例  
 这是行内颜色示例： ${\color{blue}blue}$   
--->
+
 
 $${\color{green}Success!}$$  
 $${\color{orange}\textbf{Warning!}}$$  
@@ -35,7 +35,7 @@ $${\color{purple}\textbf{紫色加粗}}$$
 $${\color{red}\textbf{CentriVision}} \space {\color{blue}\textbf{Configuration}} \space {\color{green}\textbf{Completed!}}$$  
 这里是 ${\color{red}\textbf{红色加粗文字}}$ 示例  
 这是行内颜色示例： ${\color{blue}blue}$  
-
+-->
 
 ${\color{orange}\textbf{CentriVision}}$ 是一个用于研究 ${\color{orange}\textbf{着丝粒}}$ 结构的软件工具。
 ---
