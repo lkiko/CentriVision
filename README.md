@@ -567,6 +567,8 @@ CentriVision -e total.conf
 ### 大型点图绘制 -ed EDISTDOT ${\color{orange}\textbf{整体点图}}$  
 比对结果绘制。  
 
+![ed](https://github.com/user-attachments/assets/aa34eb40-d1f5-47bf-8439-ffcc208ad7ed)  
+
 查看参数：  
 ```bash
 CentriVision -ed ?
@@ -722,11 +724,11 @@ CentriVision -md total.conf
 ```
 
 结果：  
-点阵图：展示序列重复规律的点图
-![chr02_1_s98-dotplot](https://github.com/lkiko/CentriVision/assets/57740432/47a3700d-c49d-4000-8f67-3ee4c7c1ffaa)
+点阵图：展示序列重复规律的点图  
+![md](https://github.com/user-attachments/assets/af6059fe-f27f-49c2-8fe7-8c90d39b4207) 
 
-查找重复单元的相位纠正图
-![chr02_1_s98](https://github.com/lkiko/CentriVision/assets/57740432/0de54b96-94bd-4c05-a60a-b60e64dd8020)
+查找重复单元的相位纠正图  
+![md](https://github.com/user-attachments/assets/58e31459-35d8-4d9d-aace-2dbc4bba9d55)  
 
 ${\color{red}\textbf{切片大小}}$ 与分辨率和计算机内存大小挂钩，大型矩阵极其消耗内存；对于具有 ${\color{red}\textbf{超大着丝粒}}$ 的物种，切片数量非常多，是否需要输出所有自相似矩阵图以及比对矩阵需要适当选择，可利用输出文件可选的生成对应切片的自相似矩阵图和比对矩阵
 
@@ -792,6 +794,8 @@ CentriVision -c total.conf
 ### 重复单体拆分 -m MONOMER ${\color{orange}\textbf{拆分单体}}$  
 将较为均匀的重复区域拆分为单体。  
 
+![md](https://github.com/user-attachments/assets/226ab6d2-9188-4fd7-88d6-df5a66cd9116)  
+
 查看参数：  
 ```bash
 CentriVision -m ?
@@ -831,6 +835,9 @@ CentriVision -m total.conf
 
 ### 单体模式查询 -s SEQSIGIL ${\color{orange}\textbf{重复单体logo图}}$  
 拆分着丝粒并扫描重复序列。  
+
+![md](https://github.com/user-attachments/assets/2ca1ccab-b426-4329-bb6b-22f85ede5c5f)  
+![md](https://github.com/user-attachments/assets/eccfd242-0337-4e32-a310-47f2a00a711f)  
 
 查看参数：  
 ```bash
@@ -1068,6 +1075,8 @@ CentriVision -cd total.conf
 
 ### 社区在所有着丝粒上的分布 -cm REPEAT_COMMUNITY_MAP ${\color{orange}\textbf{社区分布}}$  
 cd聚类得到的社区在所有着丝粒上的分布。  
+
+![md](https://github.com/user-attachments/assets/7f54e0f2-a817-45f2-bf61-b4d5e531add0)  
 
 查看参数：  
 ```bash
