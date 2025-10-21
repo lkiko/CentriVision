@@ -82,6 +82,10 @@ conda activate centrivision_env
 ```bash
 pip uninstall CentriVision
 ```
+或者  
+```bash
+python -c "import CentriVision; print(CentriVision.__file__)"
+```
 
 默认安装路径：  
 ```bash
