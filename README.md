@@ -50,10 +50,12 @@ ${\color{orange}\textbf{CentriVision}}$ 旨在提供一个简单而强大的工�
   <img src="https://github.com/lkiko/CentriVision/blob/main/video/install.gif?raw=true" width="100%">
 </p>
 
-你可以使用  ${\color{green}\textbf{pip}}$ (https://pypi.org/project/CentriVision/) 来安装 CentriVision：  
+你可以使用 ${\color{green}\textbf{pip}}$ (https://pypi.org/project/CentriVision/) 来安装 CentriVision：  
 ```bash
 pip install CentriVision
 ```
+
+${\color{green}\textbf{windows}}$ 用户请使用github/dist/centrivision-1.0.1-py3-none-any.whl版本，使用下面方法安装  
 
 或者，你也可以从本地安装 CentriVision 的 wheel 文件：  
 ```bash
