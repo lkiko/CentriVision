@@ -54,6 +54,7 @@ ${\color{orange}\textbf{CentriVision}}$ 旨在提供一个简单而强大的工�
 ```bash
 pip install CentriVision
 ```
+pip三平台统一版本将在下一个版本更新  
 
 ${\color{green}\textbf{windows}}$ 用户请使用github/dist/centrivision-1.0.1-py3-none-any.whl版本，使用下面方法安装  
 
