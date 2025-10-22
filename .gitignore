@@ -1,5 +1,4 @@
 build/
-dist/
 *.egg-info/
 ana-dotplot/
 CHM13/
