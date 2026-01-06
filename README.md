@@ -1259,4 +1259,9 @@ CentriVision -gr total.conf
 ```
 ---
 
+# Citating CentriVision
+If you use CentriVision in your work, please cite:
+
+Lan, M. F., Wang, X. Y., & Zhang, X. C. (2025). CentriVision: An integrated platform for multi-scale centromere analysis in plants. Plant communications, 101689. Advance online publication. https://doi.org/10.1016/j.xplc.2025.101689
+
 ***
