@@ -1,3 +1,8 @@
+# 生成的文件
+*.mp4
+
+# src 文件夹（如果全是生成的）
+CentriVision/src/
 build/
 *.egg-info/
 ana-dotplot/
@@ -7,8 +12,6 @@ doc/
 ref/
 test_old/
 mybuild.txt
-video/trf-run.mp4
-video/trf.mp4
 video/tra.py
 CentriVision/example_data/hmap/
 CentriVision/example_data/hmap_hamming/
