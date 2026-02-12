@@ -780,7 +780,7 @@ options:
 
 ### -trf TRF 串联鉴定
 
-调用TRF(Tandem Repeat Finder)扫描重复序列，根据重复序列判断着丝粒，也可以输入现有的重复注释gff3文件，同时适用于 ${\color{orange}\textbf{串联重复类型和转座子类型}}$ 的着丝粒。
+调用TRF(Tandem Repeat Finder)扫描重复序列，根据重复序列判断着丝粒。
 
 <p align="center">
   <img src="https://github.com/lkiko/CentriVision/blob/main/video/trf.gif?raw=true" width="100%">
@@ -905,7 +905,9 @@ CentriVision -trf total.conf
 $$
 {\color{red}\textbf{TRF在面对大区域重复的时候扫描特别慢，可以单独切片运行TRF注释}}$$  
 
-#### 已有注释文件时使用 -cf CENTRIFINDER 模块，输入文件兼容 ${\color{orange}\textbf{串联重复注释文件、转座子注释文件或者回文序列注释}}$  
+### -cf CENTRIFINDER 快速鉴定
+
+模块，输入文件兼容 ${\color{orange}\textbf{串联重复注释文件、转座子注释文件或者回文序列注释}}$  
 
 覆盖式命令：  
 ```bash
@@ -951,7 +953,7 @@ CentriVision -cf total.conf
 
 ### -ps PALINDROMIC 回文鉴定
 
-PALINDROMIC 模块，通过染色体 ${\color{orange}\textbf{回文序列}}$ 密度来鉴定着丝粒，注释结果输入 -cf CENTRIFINDER 模块
+PALINDROMIC 模块，通过染色体 ${\color{orange}\textbf{回文序列}}$ 密度来鉴定着丝粒
 
 覆盖式命令：  
 ```bash
@@ -1004,7 +1006,7 @@ CentriVision -ps total.conf
 
 ### -hm HEATMAP 着丝粒热图
 
-着丝粒热图  
+着丝粒内差异化热图  
 
 查看参数：  
 ```bash
@@ -1131,7 +1133,7 @@ ${\color{orange}\textbf{C语言脚本}}$ （速度快，准确率也不错） ${
 
 ### -e EDISTALN 快速比对
 
-拆分着丝粒并快速比对。  
+着丝粒并快速比对。  
 
 查看参数：  
 ```bash
@@ -1174,7 +1176,7 @@ CentriVision -e total.conf
 
 ### -ed EDISTDOT 宏观点图
 
-比对结果绘制。  
+基因组着丝粒比对结果绘制。  
 
 ![ed](https://github.com/user-attachments/assets/aa34eb40-d1f5-47bf-8439-ffcc208ad7ed)  
 
