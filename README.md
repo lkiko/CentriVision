@@ -54,22 +54,23 @@ $${\color{red}\textbf{CentriVision}} \space {\color{blue}\textbf{Configuration}}
 - [使用说明](#使用说明)
 - [使用命令](#使用命令)
 - [参数详解](#参数详解)
-  - [-trf](#-trf)
-  - [-ps](#-ps)
+  - [-trf TRF 串联鉴定](#-trf TRF 串联鉴定)
+  - [-ps PALINDROMIC 回文鉴定](#-ps PALINDROMIC 回文鉴定)
   - [参数详解](#参数详解)
-  - [参数详解](#参数详解)
-  - [参数详解](#参数详解)
-  - [参数详解](#参数详解)
-  - [参数详解](#参数详解)
-  - [参数详解](#参数详解)
-  - [参数详解](#参数详解)
-  - [参数详解](#参数详解)
-  - [参数详解](#参数详解)
-  - [参数详解](#参数详解)
-  - [参数详解](#参数详解)
-  - [参数详解](#参数详解)
-  - [参数详解](#参数详解)
-  - [参数详解](#参数详解)
+  - [-hm HEATMAP 着丝粒热图](#-hm HEATMAP 着丝粒热图)
+  - [-e EDISTALN 快速比对](#-e EDISTALN 快速比对)
+  - [-ed EDISTDOT 宏观点图](#-ed EDISTDOT 宏观点图)
+  - [-md DOTPLOT 切片分析](#-md DOTPLOT 切片分析)
+  - [-c COUNT_FILE 统计绘图](#-c COUNT_FILE 统计绘图)
+  - [-m MONOMER 重复单体拆分](#-m MONOMER 重复单体拆分)
+  - [-s SEQSIGIL logo图制作](#-s SEQSIGIL logo图制作)
+  - [-ic IC_SIGNIFICANCE 位点分歧程度](#-ic IC_SIGNIFICANCE 位点分歧程度)
+  - [-sa SATAGE 分歧推断](#-sa SATAGE 分歧推断)
+  - [-cd COMMUNITY_DETECTION 单元聚类](#-cd COMMUNITY_DETECTION 单元聚类)
+  - [-cm REPEAT_COMMUNITY_MAP 类型分布](#-cm REPEAT_COMMUNITY_MAP 类型分布)
+  - [-gc GET_CENTRI 提取区间](#-gc GET_CENTRI 提取区间)
+  - [-gf GET_CENTGFF 提取注释](#-gf GET_CENTGFF 提取注释)
+  - [-gr GET_REPEAT 提取重复](#-gr GET_REPEAT 提取重复)
 - [文献引用](#文献引用)
 
 ## 项目介绍
@@ -777,7 +778,7 @@ options:
 
 ## 参数详解
 
-### -trf
+### -trf TRF 串联鉴定
 
 调用TRF(Tandem Repeat Finder)扫描重复序列，根据重复序列判断着丝粒，也可以输入现有的重复注释gff3文件，同时适用于 ${\color{orange}\textbf{串联重复类型和转座子类型}}$ 的着丝粒。
 
@@ -948,7 +949,8 @@ centrifasta = centri fasta 候选区fasta文件
 CentriVision -cf total.conf
 ```
 
-### -ps
+### -ps PALINDROMIC 回文鉴定
+
 PALINDROMIC 模块，通过染色体 ${\color{orange}\textbf{回文序列}}$ 密度来鉴定着丝粒，注释结果输入 -cf CENTRIFINDER 模块
 
 覆盖式命令：  
@@ -1000,7 +1002,8 @@ CentriVision -ps total.conf
 
 ---
 
-### 着丝粒热图 -hm HEATMAP ${\color{orange}\textbf{热图}}$  
+### -hm HEATMAP 着丝粒热图
+
 着丝粒热图  
 
 查看参数：  
@@ -1126,7 +1129,8 @@ ${\color{orange}\textbf{C语言脚本}}$ （速度快，准确率也不错） ${
 
 ---
 
-### 快速比对 -e EDISTALN ${\color{orange}\textbf{整体点图比对}}$  
+### -e EDISTALN 快速比对
+
 拆分着丝粒并快速比对。  
 
 查看参数：  
@@ -1168,7 +1172,8 @@ CentriVision -e total.conf
 ---
 
 
-### 大型点图绘制 -ed EDISTDOT ${\color{orange}\textbf{整体点图}}$  
+### -ed EDISTDOT 宏观点图
+
 比对结果绘制。  
 
 ![ed](https://github.com/user-attachments/assets/aa34eb40-d1f5-47bf-8439-ffcc208ad7ed)  
@@ -1259,7 +1264,8 @@ CentriVision -ed total.conf
 ```
 ---
 
-### 重复模式 -md DOTPLOT ${\color{orange}\textbf{分块点图}}$  
+### -md DOTPLOT 切片分析
+
 拆分着丝粒并扫描重复序列。  
 
 查看参数：  
@@ -1336,7 +1342,8 @@ CentriVision -md total.conf
 
 ${\color{red}\textbf{切片大小}}$ 与分辨率和计算机内存大小挂钩，大型矩阵极其消耗内存；对于具有 ${\color{red}\textbf{超大着丝粒}}$ 的物种，切片数量非常多，是否需要输出所有自相似矩阵图以及比对矩阵需要适当选择，可利用输出文件可选的生成对应切片的自相似矩阵图和比对矩阵
 
-### 统计 -c COUNT_FILE ${\color{orange}\textbf{统计绘图}}$  
+### -c COUNT_FILE 统计绘图
+
 统计着丝粒重复单元信息。  
 
 查看参数：  
@@ -1395,7 +1402,8 @@ CentriVision -c total.conf
 ---
 
 
-### 重复单体拆分 -m MONOMER ${\color{orange}\textbf{拆分单体}}$  
+### -m MONOMER 重复单体拆分
+
 将较为均匀的重复区域拆分为单体。  
 
 ![md](https://github.com/user-attachments/assets/226ab6d2-9188-4fd7-88d6-df5a66cd9116)  
@@ -1437,7 +1445,8 @@ CentriVision -m total.conf
 ```
 ---
 
-### 单体模式查询 -s SEQSIGIL ${\color{orange}\textbf{重复单体logo图}}$  
+### -s SEQSIGIL logo图制作
+
 拆分着丝粒并扫描重复序列。  
 
 ![md](https://github.com/user-attachments/assets/2ca1ccab-b426-4329-bb6b-22f85ede5c5f)  
@@ -1489,7 +1498,8 @@ CentriVision -s total.conf
 ```
 ---
 
-### 重复单体局部保守性 -ic IC_SIGNIFICANCE ${\color{orange}\textbf{香农信息熵}}$  
+### -ic IC_SIGNIFICANCE 位点分歧程度
+
 扫描重复单体不同区域的保守性。  
 
 查看参数：  
@@ -1559,7 +1569,8 @@ CentriVision -ic total.conf
 ```
 ---
 
-### 相对突变距离 -sa SATAGE ${\color{orange}\textbf{Monomer相对年龄}}$  
+### -sa SATAGE 分歧推断
+
 计算Monomer之间的相对距离，不指定祖先序列，只展示序列相对差异大小，理论上数值小可以代表最近扩增。  
 
 查看参数：  
@@ -1634,7 +1645,8 @@ CentriVision -sa total.conf
 ```
 ---
 
-### 切片种子序列聚类 -cd COMMUNITY_DETECTION ${\color{orange}\textbf{聚类}}$  
+### -cd COMMUNITY_DETECTION 单元聚类
+
 根据md模块得到的每个切片的采样进行聚类，划分不同的重复单元组。  
 
 查看参数：  
@@ -1677,7 +1689,8 @@ CentriVision -cd total.conf
 ```
 ---
 
-### 社区在所有着丝粒上的分布 -cm REPEAT_COMMUNITY_MAP ${\color{orange}\textbf{社区分布}}$  
+### -cm REPEAT_COMMUNITY_MAP 类型分布
+
 cd聚类得到的社区在所有着丝粒上的分布。  
 
 ![md](https://github.com/user-attachments/assets/7f54e0f2-a817-45f2-bf61-b4d5e531add0)  
@@ -1732,7 +1745,8 @@ CentriVision -cm total.conf
 ```
 ---
 
-### 提取着丝粒 -gc GET_CENTRI ${\color{orange}\textbf{提取序列}}$  
+### -gc GET_CENTRI 提取区间
+
 根据gff提取对应的区域。  
 
 查看参数：  
@@ -1772,7 +1786,8 @@ CentriVision -gc total.conf
 ```
 ---
 
-### 提取着丝粒gff -gf GET_CENTGFF ${\color{orange}\textbf{提取着丝粒区域gff}}$  
+### -gf GET_CENTGFF 提取注释
+
 从全基因组注释文件中提取着丝粒区域的注释信息。  
 
 查看参数：  
@@ -1817,7 +1832,8 @@ CentriVision -gf total.conf
 ```
 ---
 
-### 提取重复信息 -gr GET_REPEAT ${\color{orange}\textbf{提取repeatmasker/EDTA文件}}$  
+### -gr GET_REPEAT 提取重复
+
 从常用注释软件的结果中提取指定信息，例如提取Gypsy注释/Copia注释。  
 
 查看参数：  
