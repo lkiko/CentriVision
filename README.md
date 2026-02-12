@@ -335,6 +335,107 @@ CentriVision使用-e模块快速的对所有着丝粒序列进行比对，并使
 
 </details>
 
+<details>
+<summary>Click to expand to view the author's ramblings 👏</summary>
+
+---
+
+**CentriVision** provides **two** methods for centromere identification. The first is based on **tandem repeats**, using the `-trf` / `-cf` modules.  
+`-trf` automatically invokes a local installation of TRF to annotate tandem repeats across the genome. This step outputs a genome-wide tandem repeat annotation GFF file, along with centromere predictions. However, different species often vary in centromere size and the degree of repeat clustering. In such cases, the `-cf` module can be used, taking the previously generated genome-wide tandem repeat GFF file as input and allowing parameter adjustments for refined predictions.
+
+The `-cf` module also offers more flexibility. When dealing with large genomes, running TRF locally can be too slow. If you already have a precomputed TRF annotation GFF file, you can directly input it into the `-cf` module.
+
+Additionally, this provides an entry point for **transposon-based centromere** prediction. By inputting a genome-wide transposon annotation GFF file, you can predict transposon-derived centromeres.  
+(Note: Since transposons are generally more evenly distributed across the genome compared to tandem repeats, it is recommended to input a species-specific annotation of transposon components enriched in centromeres when predicting this type of centromere.)
+
+The second method for centromere identification is based on **palindromic sequences**, implemented in the `-ps` module of CentriVision.  
+All three modules output the genomic coordinates of identified centromeres along with their corresponding sequence files.
+
+---
+
+In addition, several auxiliary modules are available for the identification step.  
+If you already have centromere coordinates or other region files and wish to extract the corresponding sequences, use the `-gc` module.  
+To extract specific sequences from repeat annotations, use `-gr`.  
+To extract annotation results for centromeres or specified regions and reindex them relative to the target region, use `-gf`.
+
+---
+
+Once the centromeric regions in the genome have been identified and the corresponding full centromere sequences—as well as repeat annotations indexed **relative to the centromere**—have been extracted, we can proceed to the next step: viewing the centromere from a macro perspective.
+
+---
+
+CentriVision uses the `-e` module to rapidly align all centromere sequences, and the `-ed` module to generate dot plot similarity matrices between them.  
+The `-hm` module then takes the centromere sequences along with the various repeat annotation files (typically TRF, Copia, Gypsy, Gene, etc.) extracted via `-gf` and generates a triangular heatmap for each centromere.
+
+---
+
+For further investigation at a finer scale, the `-md` module splits each centromere into 4000–6000 bp fragments, generates a dot plot for each fragment, and tallies all repeat sequences within each fragment. This step outputs summary statistics, along with positional, sequence, and dot plot files for each fragment. This stage produces a large number of images.  
+The `-c` module can then read the summary statistics file to generate a cleaned statistical file and a length distribution plot of the repeat sequences.
+
+---
+
+The output statistical file can be reformatted into a sequence file, using the seed sequence from each `-md` fragment as a representative. These are fed into the `-cd` module for clustering. It is recommended to remove overly short fragments before clustering. The module groups similar sequences into communities.  
+Subsequently, the `-cm` module visualizes the distribution of these communities along the centromeres. Intervals containing the same community in succession can be manually extracted, and the `-gc` module can be used to retrieve the corresponding sequences for the next step.
+
+---
+
+Sequences from the same community are pooled and processed using the `-m` module to decompose them into repeat monomers. Each run generates a score plot and a repeat monomer, producing many images and a monomer collection (FASTA file).  
+The `-s` module then generates a sequence logo of the monomer, `-ic` produces mutation profiles, and `-sa` estimates the divergence level among monomers.
+
+---
+
+</details>
+
+<details>
+<summary>クリックして作者の独り言を表示👏</summary>
+
+---
+
+**CentriVision**は、セントロメアを特定する**2つ**の方法を提供します。1つ目は**タンデムリピート**に基づく方法で、`-trf` / `-cf` モジュールを使用します。  
+`-trf`はローカルにインストールされたTRFソフトウェアを自動的に呼び出し、ゲノム全体のタンデムリピートアノテーションを実行します。このステップでは、全ゲノムのタンデムリピートアノテーションGFFファイルとともに、セントロメア予測結果も出力されます。しかし、種によってセントロメアのサイズやリピートの集積度は異なるため、そのような場合は`-cf`モジュールを使用し、先ほど生成した全ゲノムタンデムリピートアノテーションGFFファイルを入力として、パラメータを調整した上で再予測することができます。
+
+また、`-cf`モジュールはさらなる柔軟性も提供します。大規模ゲノムを扱う場合、ローカルでTRFを実行するには時間がかかりすぎます。既存のTRF予測結果GFFファイルがあれば、それを直接`-cf`モジュールに入力することが可能です。
+
+さらに、このモジュールは**トランスポゾン由来セントロメア**の予測への入り口にもなります。全ゲノムのトランスポゾン予測結果GFFファイルを入力することで、トランスポゾンタイプのセントロメアを予測できます。  
+（注：トランスポゾンはタンデムリピートに比べてゲノム全体により均等に分布する傾向があるため、このタイプのセントロメアを予測する際には、対象種のセントロメアに富むトランスポゾン成分のアノテーション結果を入力することを推奨します。）
+
+2つ目のセントロメア特定方法は**パリンドローム配列**に基づくもので、CentriVisionの`-ps`モジュールで実行します。  
+以上の3つのモジュールは、特定したセントロメアのゲノム上の位置情報ファイルと、対応する配列ファイルを出力します。
+
+---
+
+また、特定作業には補助モジュールも用意されています。  
+既にセントロメアや目的領域の位置情報ファイルがあり、対応する配列を抽出したい場合は`-gc`モジュールを使用します。  
+リピートアノテーションから特定の配列を抽出するには`-gr`モジュールを、セントロメアや目的領域のアノテーション結果を抽出し、インデックスを対象領域に対して相対的に修正するには`-gf`モジュールを使用します。
+
+---
+
+以上のステップを経て、ゲノム中のセントロメア領域を特定し、対応する完全長セントロメア配列、および**セントロメア相対**でインデックスされたセントロメア領域のリピートアノテーションを抽出します。これにより、次のステップである巨視的な視点からのセントロメア解析に進むことができます。
+
+---
+
+CentriVisionの`-e`モジュールは、すべてのセントロメア配列を高速にアラインメントし、`-ed`モジュールはセントロメア間の類似性を示すドットプロットを描画します。  
+次に`-hm`モジュールは、セントロメア配列と、先ほど`-gf`モジュールで抽出したセントロメア相対の各種リピートファイル（一般的にはTRF、Copia、Gypsy、Geneなど）を入力として、各セントロメアの三角形ヒートマップを描画します。
+
+---
+
+さらに詳細な局所領域のセントロメア解析を行うには、`-md`モジュールを使用します。このモジュールはすべてのセントロメアを4000～6000 bpの断片に分割し、各断片のドットプロットを作成するとともに、各断片内の全リピート配列を集計します。出力されるのは統計ファイル、各断片の位置情報、配列、ドットプロットファイルなどです。この段階では多数の画像が生成されます。  
+次に`-c`モジュールで統計ファイルを読み込むと、クリーニングされた統計ファイルとリピート配列の長さ分布図が生成されます。
+
+---
+
+出力された統計ファイルをシーケンスファイルに変換し、各`-md`断片のシード配列を代表配列として使用します。これを`-cd`モジュールに入力してクラスタリングを実行します。このモジュールでは、短すぎる断片は事前に除去することが推奨されます。類似した配列はコミュニティとしてグループ化されます。  
+その後、`-cm`モジュールを使用して、セントロメア上におけるこれらのコミュニティの分布を可視化します。同じコミュニティが連続して分布する区間を手動で抽出し、`-gc`モジュールで対応する配列を取得して次のステップに進みます。
+
+---
+
+同一コミュニティの配列をまとめて`-m`モジュールに入力し、リピートモノマーに分割します。この分割処理のたびにスコアプロットとリピートモノマーが生成され、最終的に多数の画像とモノマーコレクション（FASTAファイル）が得られます。  
+その後、`-s`モジュールでモノマーのロゴ図を、`-ic`モジュールでモノマーの変異プロファイルを取得でき、`-sa`モジュールではモノマー間の分岐度を推定することができます。
+
+---
+
+</details>
+
 ---
 
 ### 模块说明
