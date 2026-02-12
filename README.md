@@ -217,17 +217,17 @@ CentriVision 支持：
 ---
 
 
-Genome Input
-│
-▼
-┌─────────────────────────────┐
-│   Centromere Identification │
-└─────────────────────────────┘
-│
-├── -trf  → TRF-based tandem repeat detection
-│
-├── -cf   → Custom repeat / TE-based prediction
-│            (supports external GFF input)
+Genome Input  
+│  
+▼  
+┌─────────────────────────────┐  
+│   Centromere Identification │  
+└─────────────────────────────┘  
+│  
+├── -trf  → TRF-based tandem repeat detection  
+│  
+├── -cf   → Custom repeat / TE-based prediction  
+│            (supports external GFF input)  
 │
 └── -ps   → Palindrome-based detection
 │
