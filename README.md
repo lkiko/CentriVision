@@ -281,7 +281,8 @@ Extract Continuous Community Regions
 ├── -ic  → Mutation analysis  
 └── -sa  → Divergence estimation  
 
-
+```
+pgsql
 Genome Input  
     │  
     ▼  
@@ -346,7 +347,7 @@ Extract Continuous Community Regions
     ├── -s   → Monomer logo
     ├── -ic  → Mutation analysis
     └── -sa  → Divergence estimation
-
+```
 
 ---
 
