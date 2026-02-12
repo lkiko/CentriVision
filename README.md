@@ -281,6 +281,72 @@ Extract Continuous Community Regions
 ├── -ic  → Mutation analysis  
 └── -sa  → Divergence estimation  
 
+Genome Input
+    │
+    ▼
+┌─────────────────────────────┐
+│   Centromere Identification │
+└─────────────────────────────┘
+    │
+    ├── -trf  → TRF-based tandem repeat detection
+    │
+    ├── -cf   → Custom repeat / TE-based prediction
+    │            (supports external GFF input)
+    │
+    └── -ps   → Palindrome-based detection
+    │
+    ▼
+Centromere Coordinates + Sequences
+    │
+    ▼
+┌─────────────────────────────┐
+│   Auxiliary Extraction      │
+└─────────────────────────────┘
+    │
+    ├── -gc  → Extract centromere sequences
+    ├── -gr  → Extract repeat sequences
+    └── -gf  → Re-index annotations (relative to centromere)
+    │
+    ▼
+Centromere Sequences +
+Relative Repeat Annotations
+    │
+    ▼
+┌─────────────────────────────┐
+│   Macro-scale Analysis      │
+└─────────────────────────────┘
+    │
+    ├── -e   → Multi-centromere alignment
+    ├── -ed  → Dotplot between centromeres
+    └── -hm  → Triangular heatmap visualization
+    │
+    ▼
+┌─────────────────────────────┐
+│   Micro-scale Analysis      │
+└─────────────────────────────┘
+    │
+    ├── -md  → Split into 4–6 kb fragments
+    │           • Dotplot per fragment
+    │           • Repeat statistics
+    │
+    ├── -c   → Clean statistics
+    │           • Length distribution
+    │
+    ├── -cd  → Fragment clustering
+    │
+    ├── -cm  → Community distribution visualization
+    │
+    ▼
+Extract Continuous Community Regions
+    │
+    ▼
+-m  → Repeat Monomer Decomposition
+    │
+    ├── -s   → Monomer logo
+    ├── -ic  → Mutation analysis
+    └── -sa  → Divergence estimation
+
+
 ---
 
 <details>
