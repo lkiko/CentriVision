@@ -54,7 +54,7 @@ $${\color{red}\textbf{CentriVision}} \space {\color{blue}\textbf{Configuration}}
 - [使用说明](#使用说明)
 - [使用命令](#使用命令)
 - [参数详解](#参数详解)
-  - [-trf TRF 串联鉴定](#-trf TRF 串联鉴定)
+  - [-trf TRF 串联鉴定](#-trf-TRF-串联鉴定)
   - [-ps PALINDROMIC 回文鉴定](#-ps PALINDROMIC 回文鉴定)
   - [参数详解](#参数详解)
   - [-hm HEATMAP 着丝粒热图](#-hm HEATMAP 着丝粒热图)
