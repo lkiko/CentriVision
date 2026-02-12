@@ -54,6 +54,22 @@ $${\color{red}\textbf{CentriVision}} \space {\color{blue}\textbf{Configuration}}
 - [使用说明](#使用说明)
 - [使用命令](#使用命令)
 - [参数详解](#参数详解)
+  - [-trf](#-trf)
+  - [-ps](#-ps)
+  - [参数详解](#参数详解)
+  - [参数详解](#参数详解)
+  - [参数详解](#参数详解)
+  - [参数详解](#参数详解)
+  - [参数详解](#参数详解)
+  - [参数详解](#参数详解)
+  - [参数详解](#参数详解)
+  - [参数详解](#参数详解)
+  - [参数详解](#参数详解)
+  - [参数详解](#参数详解)
+  - [参数详解](#参数详解)
+  - [参数详解](#参数详解)
+  - [参数详解](#参数详解)
+  - [参数详解](#参数详解)
 - [文献引用](#文献引用)
 
 ## 项目介绍
@@ -761,7 +777,7 @@ options:
 
 ## 参数详解
 
-### 着丝粒鉴定 -trf TRF ${\color{orange}\textbf{TRF(Tandem Repeat Finder)}}$
+### -trf
 
 调用TRF(Tandem Repeat Finder)扫描重复序列，根据重复序列判断着丝粒，也可以输入现有的重复注释gff3文件，同时适用于 ${\color{orange}\textbf{串联重复类型和转座子类型}}$ 的着丝粒。
 
@@ -932,7 +948,8 @@ centrifasta = centri fasta 候选区fasta文件
 CentriVision -cf total.conf
 ```
 
-#### 回文序列注释 -ps PALINDROMIC 模块，通过染色体 ${\color{orange}\textbf{回文序列}}$ 密度来鉴定着丝粒，注释结果输入 -cf CENTRIFINDER 模块
+### -ps
+PALINDROMIC 模块，通过染色体 ${\color{orange}\textbf{回文序列}}$ 密度来鉴定着丝粒，注释结果输入 -cf CENTRIFINDER 模块
 
 覆盖式命令：  
 ```bash
